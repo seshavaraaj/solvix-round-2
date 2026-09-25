@@ -79,9 +79,11 @@ services:
     runtime: static
     rootDir: rider
     # Render static sites do not include Flutter, so the build clones the stable SDK.
+    # $HOME persists between builds: reuse the SDK, and re-clone only if it is missing or broken.
     # Fallback (handoff §1): commit a local build to rider/web_dist/ and publish that instead.
     buildCommand: >-
-      git clone https://github.com/flutter/flutter.git -b stable --depth 1 $HOME/flutter &&
+      { [ -x $HOME/flutter/bin/flutter ] || { rm -rf $HOME/flutter &&
+      git clone https://github.com/flutter/flutter.git -b stable --depth 1 $HOME/flutter; }; } &&
       $HOME/flutter/bin/flutter config --enable-web &&
       $HOME/flutter/bin/flutter build web --release --dart-define=API_URL=$API_URL
     staticPublishPath: build/web
