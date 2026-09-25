@@ -23,7 +23,7 @@ class RiderApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const seed = Color(0xFF2A78D6);
     return MaterialApp(
-      title: 'TransitPulse Rider',
+      title: 'AduthaBus Rider',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: seed, useMaterial3: true),
       darkTheme: ThemeData(colorSchemeSeed: seed, brightness: Brightness.dark, useMaterial3: true),

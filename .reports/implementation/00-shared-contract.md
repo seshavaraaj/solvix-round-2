@@ -1,4 +1,4 @@
-# TransitPulse Lite — Shared Contract (Backend ↔ Frontend)
+# AduthaBus Lite — Shared Contract (Backend ↔ Frontend)
 
 | Field | Value |
 |---|---|
@@ -184,10 +184,10 @@ Frontend mirrors these as TypeScript interfaces (`operator/src/api/types.ts`, `a
 ```json
 {
   "scenarios": ["normal_weekday", "heavy_rain", "event_surge", "breakdown"],
-  "strategies": ["baseline", "holding", "transitpulse"],
+  "strategies": ["baseline", "holding", "aduthabus"],
   "error_levels": [0, 0.2, 0.4, "missed_surge"],
   "rows": [
-    {"scenario": "event_surge", "strategy": "transitpulse", "error_level": 0,
+    {"scenario": "event_surge", "strategy": "aduthabus", "error_level": 0,
      "avg_wait_min": 7.9, "p95_wait_min": 15.2, "left_behind": 60, "overload_min": 20,
      "bunching_events": 5, "avg_load_factor": 0.71, "deadhead_km": 18.0, "changes_per_hour": 1.2}
   ]
@@ -262,7 +262,7 @@ Notes:
 | `OPERATOR_PASSWORD`, `ADMIN_PASSWORD` | API (seed) | set in Render dashboard | A |
 | `LIVE_MODE` | API | `false` (default) | A |
 | `GTFS_RT_KEY` | API (live mode only) | Delhi OTD key | A |
-| `VITE_API_URL` | operator, admin (build time) | `https://transitpulse-api.onrender.com` | B |
+| `VITE_API_URL` | operator, admin (build time) | `https://aduthabus-api.onrender.com` | B |
 | `API_URL` | rider (`--dart-define=API_URL=...` at build) | same | B |
 
 ## 9. Milestones and sync points
@@ -302,11 +302,11 @@ All in one `render.yaml` Blueprint. A owns the file; B supplies the static-site 
 
 | Service | Type (free) | Root | Build command | Publish dir / start | Owner |
 |---|---|---|---|---|---|
-| `transitpulse-api` | Web service, Python | `api` | `pip install -r requirements.txt` | `uvicorn app.main:app --host 0.0.0.0 --port $PORT`; health check `/health` | A |
-| `transitpulse-db` | Postgres | — | — | `DATABASE_URL` → API | A |
-| `transitpulse-operator` | Static site | `operator` | `npm ci && npm run build` | `dist`; rewrite `/*` → `/index.html` | B |
-| `transitpulse-admin` | Static site | `admin` | `npm ci && npm run build` | `dist`; rewrite `/*` → `/index.html` | B |
-| `transitpulse-rider` | Static site | `rider` | see [`02-frontend-plan.md#f5`](02-frontend-plan.md#f5--rider-app-flutter) (Flutter SDK is not preinstalled on Render) | `build/web` | B |
+| `aduthabus-api` | Web service, Python | `api` | `pip install -r requirements.txt` | `uvicorn app.main:app --host 0.0.0.0 --port $PORT`; health check `/health` | A |
+| `aduthabus-db` | Postgres | — | — | `DATABASE_URL` → API | A |
+| `aduthabus-operator` | Static site | `operator` | `npm ci && npm run build` | `dist`; rewrite `/*` → `/index.html` | B |
+| `aduthabus-admin` | Static site | `admin` | `npm ci && npm run build` | `dist`; rewrite `/*` → `/index.html` | B |
+| `aduthabus-rider` | Static site | `rider` | see [`02-frontend-plan.md#f5`](02-frontend-plan.md#f5--rider-app-flutter) (Flutter SDK is not preinstalled on Render) | `build/web` | B |
 
 Free-tier rules (from [`../../.data/constraints.md`](../../.data/constraints.md)): one web service, one database, static sites free. Free web service sleeps after 15 min idle (≈1 min cold start). Free Postgres expires 30 days after creation, so A runs `scripts/export_log.py` before expiry.
 

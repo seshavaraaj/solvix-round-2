@@ -40,7 +40,7 @@ export function Console() {
   return (
     <div className="console">
       <header className="topbar">
-        <strong className="brand">TransitPulse</strong>
+        <strong className="brand">AduthaBus</strong>
         <ClockBar t={t} />
         <FeedBadge feed={state.data?.feed} />
         <button type="button" className="link" onClick={logout}>

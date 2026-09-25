@@ -1,4 +1,4 @@
-# TransitPulse Lite — Frontend Handoff to Person A
+# AduthaBus Lite — Frontend Handoff to Person A
 
 | Field | Value |
 |---|---|
@@ -12,35 +12,35 @@ Add these three services under `services:`. Replace the API URL with the real Re
 
 ```yaml
   - type: web
-    name: transitpulse-operator
+    name: aduthabus-operator
     runtime: static
     rootDir: operator
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://transitpulse-api.onrender.com
+        value: https://aduthabus-api.onrender.com
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
 
   - type: web
-    name: transitpulse-admin
+    name: aduthabus-admin
     runtime: static
     rootDir: admin
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://transitpulse-api.onrender.com
+        value: https://aduthabus-api.onrender.com
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
 
   - type: web
-    name: transitpulse-rider
+    name: aduthabus-rider
     runtime: static
     rootDir: rider
     # Render static sites do not include Flutter, so the build clones the stable SDK.
@@ -51,7 +51,7 @@ Add these three services under `services:`. Replace the API URL with the real Re
     staticPublishPath: build/web
     envVars:
       - key: API_URL
-        value: https://transitpulse-api.onrender.com
+        value: https://aduthabus-api.onrender.com
 ```
 
 **Rider fallback:** if the Flutter build on Render is too slow or fails, B builds locally, commits `rider/web_dist/`, and the entry changes to `buildCommand: ""` and `staticPublishPath: web_dist`.
@@ -86,4 +86,4 @@ These are readings of the contract, not new fields. If any is wrong, the fix goe
 ## 5. Before the first deploy
 
 - Run `npm install` once in `operator/` and `admin/` and commit both `package-lock.json` files. `npm ci` fails without them.
-- In `rider/`, run `flutter create --platforms=web,android --project-name transitpulse_rider .` once. It adds the missing Android scaffolding and keeps the existing `lib/`, `web/` and `test/` files.
+- In `rider/`, run `flutter create --platforms=web,android --project-name aduthabus_rider .` once. It adds the missing Android scaffolding and keeps the existing `lib/`, `web/` and `test/` files.

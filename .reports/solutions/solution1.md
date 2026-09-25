@@ -5,12 +5,12 @@
 | Drafted | 2026-09-25 |
 | Problem | AI-Based Dynamic Public Transport Scheduling (`problem-statement.md`) |
 | Based on | `.reports/2026-09-25_ai-dynamic-bus-scheduling-existing-solutions.md` (cited below as "Report") |
-| Working name | **TransitPulse** |
+| Working name | **AduthaBus** |
 | Status | Draft for team review |
 
 ## 1. One-Line Pitch
 
-TransitPulse is a decision-support system for bus control rooms. Every 15 minutes it forecasts demand and delays across a group of routes, flags overcrowded, underused, and delayed services, and recommends where to move buses. Each recommendation shows its reason and expected effect, and a dispatcher approves or rejects it with one click.
+AduthaBus is a decision-support system for bus control rooms. Every 15 minutes it forecasts demand and delays across a group of routes, flags overcrowded, underused, and delayed services, and recommends where to move buses. Each recommendation shows its reason and expected effect, and a dispatcher approves or rejects it with one click.
 
 ## 2. Why This Solution
 
@@ -23,7 +23,7 @@ The Report found that the problem's core loop (detect problems, then move capaci
 | Academic RL (DRL-TO, multi-agent holding) | Makes control decisions automatically | Usually one route, in simulation, and hard to explain |
 | DTC AI Bus Management tender | Plans for all of the above in Delhi | Still at tender stage; no working system yet |
 
-TransitPulse fills this gap: it links detection to **network-level fleet reallocation**, and it is built for Indian data conditions (GPS feeds and ticket-machine data, but few passenger counters).
+AduthaBus fills this gap: it links detection to **network-level fleet reallocation**, and it is built for Indian data conditions (GPS feeds and ticket-machine data, but few passenger counters).
 
 ## 3. Scope
 
@@ -169,7 +169,7 @@ A discrete-event simulator (SimPy) replays a service day on the chosen routes, u
 
 1. Baseline: fixed timetable, no control.
 2. Baseline + virtual-schedule holding.
-3. TransitPulse: holding + 15-minute reallocation (recommendations auto-approved in simulation).
+3. AduthaBus: holding + 15-minute reallocation (recommendations auto-approved in simulation).
 
 **Scenarios**
 
@@ -206,7 +206,7 @@ A discrete-event simulator (SimPy) replays a service day on the chosen routes, u
 
 ## 7. Differentiation
 
-| Point | TransitPulse | Typical existing tool |
+| Point | AduthaBus | Typical existing tool |
 |---|---|---|
 | Scope | Several routes, one shared fleet | One route, or display only |
 | Output | Specific action with expected effect | Alert or dashboard |
@@ -223,7 +223,7 @@ Phases in order of priority. If time runs short, stop after Phase 3; the result 
 |---|---|---|
 | 1. Data | GTFS for chosen routes loaded; live GPS feed parsed; synthetic ticket data generated | 15% |
 | 2. Forecast + detection | Demand and travel-time models; four flags working on replayed data | 20% |
-| 3. Optimiser + simulator | Reallocation model; simulator with baseline vs TransitPulse results | 30% |
+| 3. Optimiser + simulator | Reallocation model; simulator with baseline vs AduthaBus results | 30% |
 | 4. Console | Map, route health table, recommendation cards with approve/reject | 20% |
 | 5. Explanations + polish | LLM explanations; scenario demos; result charts | 15% |
 
@@ -235,7 +235,7 @@ Phases in order of priority. If time runs short, stop after Phase 3; the result 
 2. Start the "event surge" scenario. Route 534 turns red: forecast load 125%.
 3. A recommendation card appears: move 2 buses from underused Route 423. Read the explanation.
 4. Approve it. The simulator shows waiting time and crowding falling on 534, while 423 keeps its minimum service.
-5. End with the results table: baseline vs holding only vs TransitPulse, across all four scenarios.
+5. End with the results table: baseline vs holding only vs AduthaBus, across all four scenarios.
 
 ## 10. Risks and Mitigations
 

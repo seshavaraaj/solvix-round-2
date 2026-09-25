@@ -5,9 +5,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:transitpulse_rider/api/client.dart';
-import 'package:transitpulse_rider/screens/on_bus_screen.dart';
-import 'package:transitpulse_rider/state/prefs.dart';
+import 'package:aduthabus_rider/api/client.dart';
+import 'package:aduthabus_rider/screens/on_bus_screen.dart';
+import 'package:aduthabus_rider/state/prefs.dart';
 
 const _bus = {
   'id': 'bus_DL1PC1234',

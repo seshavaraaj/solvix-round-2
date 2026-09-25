@@ -1,4 +1,4 @@
-# TransitPulse operator console
+# AduthaBus operator console
 
 React 18 + Vite + TypeScript. Map (MapLibre + OpenFreeMap), route health, recommendation queue with what-if, results charts.
 

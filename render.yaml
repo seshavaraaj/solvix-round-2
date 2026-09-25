@@ -8,7 +8,7 @@
 
 services:
   - type: web
-    name: transitpulse-api
+    name: aduthabus-api
     runtime: python
     plan: free
     region: singapore
@@ -27,7 +27,7 @@ services:
         value: "3.12.8"          # numpy 2.5 needs Python >= 3.12
       - key: DATABASE_URL
         fromDatabase:
-          name: transitpulse-db
+          name: aduthabus-db
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
@@ -36,7 +36,7 @@ services:
       - key: ADMIN_PASSWORD
         sync: false
       - key: CORS_ORIGINS
-        value: https://transitpulse-operator.onrender.com,https://transitpulse-admin.onrender.com,https://transitpulse-rider.onrender.com,http://localhost:5173,http://localhost:5174,http://localhost:8080
+        value: https://aduthabus-operator.onrender.com,https://aduthabus-admin.onrender.com,https://aduthabus-rider.onrender.com,http://localhost:5173,http://localhost:5174,http://localhost:8080
       - key: LIVE_MODE
         value: "false"
       - key: DEFAULT_SCENARIO
@@ -46,35 +46,35 @@ services:
 
   # ---- Person B: static sites (from .reports/implementation/03-frontend-handoff.md §1) ----
   - type: web
-    name: transitpulse-operator
+    name: aduthabus-operator
     runtime: static
     rootDir: operator
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://transitpulse-api.onrender.com
+        value: https://aduthabus-api.onrender.com
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
 
   - type: web
-    name: transitpulse-admin
+    name: aduthabus-admin
     runtime: static
     rootDir: admin
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://transitpulse-api.onrender.com
+        value: https://aduthabus-api.onrender.com
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
 
   - type: web
-    name: transitpulse-rider
+    name: aduthabus-rider
     runtime: static
     rootDir: rider
     # Render static sites do not include Flutter, so the build clones the stable SDK.
@@ -86,11 +86,11 @@ services:
     staticPublishPath: build/web
     envVars:
       - key: API_URL
-        value: https://transitpulse-api.onrender.com
+        value: https://aduthabus-api.onrender.com
 
 databases:
-  - name: transitpulse-db
+  - name: aduthabus-db
     plan: free
     region: singapore
-    databaseName: transitpulse
-    user: transitpulse
+    databaseName: aduthabus
+    user: aduthabus

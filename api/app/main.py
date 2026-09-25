@@ -1,4 +1,4 @@
-"""TransitPulse Lite API (FastAPI, one process, Render free web service).
+"""AduthaBus Lite API (FastAPI, one process, Render free web service).
 
 Start-up loads the network, models and replay days in a background thread so
 `/health` answers at once. Until loading finishes every other endpoint returns
@@ -45,7 +45,7 @@ async def lifespan(_: FastAPI):
     yield
 
 
-app = FastAPI(title="TransitPulse Lite API", version=settings.version, lifespan=lifespan)
+app = FastAPI(title="AduthaBus Lite API", version=settings.version, lifespan=lifespan)
 errors.install(app)
 app.add_middleware(
     CORSMiddleware,

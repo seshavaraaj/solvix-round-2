@@ -41,7 +41,7 @@ def main() -> None:
     for sc in scenarios:
         for strategy in STRATEGIES:
             # baseline and holding ignore the forecast, so run them once and repeat per error level
-            levels = ERROR_LEVELS if strategy == "transitpulse" else [None]
+            levels = ERROR_LEVELS if strategy == "aduthabus" else [None]
             for level in levels:
                 runs = []
                 for seed in range(args.seeds):

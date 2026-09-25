@@ -1,4 +1,4 @@
-# TransitPulse Lite — Frontend Implementation Plan (Person B)
+# AduthaBus Lite — Frontend Implementation Plan (Person B)
 
 | Field | Value |
 |---|---|
@@ -98,7 +98,7 @@ Endpoints: `/whatif`, `/results`
 2. Show `without` vs `with` metrics side by side and a line chart of `series` (load with / without).
 3. **Results tab** (`pages/Results.tsx`): from `GET /results`:
    - Grouped bar chart: avg wait by scenario × strategy (error level 0).
-   - Robustness chart: TransitPulse gain vs baseline across error levels (0, 0.2, 0.4, missed surge).
+   - Robustness chart: AduthaBus gain vs baseline across error levels (0, 0.2, 0.4, missed surge).
    - Table of all metrics with directions (lower/higher is better, solution2 §6.11).
 
 Done when: M3 joint test passes on Render.

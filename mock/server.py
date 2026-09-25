@@ -33,7 +33,7 @@ def err(status: int, code: str, message: str) -> JSONResponse:
     return JSONResponse({"error": {"code": code, "message": message}}, status_code=status)
 
 
-app = FastAPI(title="TransitPulse Lite mock API")
+app = FastAPI(title="AduthaBus Lite mock API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
                    expose_headers=["Content-Disposition"])
 

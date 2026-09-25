@@ -11,5 +11,5 @@ export const CHART = {
 export const STRATEGY_COLOR: Record<string, string> = {
   baseline: CHART.series[0],
   holding: CHART.series[1],
-  transitpulse: CHART.series[2],
+  aduthabus: CHART.series[2],
 };

@@ -1,6 +1,6 @@
 {
-  "name": "TransitPulse Rider",
-  "short_name": "TransitPulse",
+  "name": "AduthaBus Rider",
+  "short_name": "AduthaBus",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fcfcfb",

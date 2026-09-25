@@ -2,13 +2,13 @@
 
 1. baseline      fixed timetable, no control
 2. holding       baseline + virtual-schedule holding at the mid-route timepoint
-3. transitpulse  headway-based holding + reallocation: the optimiser runs every
+3. aduthabus  headway-based holding + reallocation: the optimiser runs every
                  30 minutes and its recommendations are auto-approved; terminal
                  and mid-route departures are spaced to the current headway
                  (cycle / buses), so buses added or removed are absorbed evenly
 
 Forecast error for the robustness test is injected into what the
-TransitPulse planner sees, never into the true demand:
+AduthaBus planner sees, never into the true demand:
   0 / 0.2 / 0.4   each route's forecast x U(1 - e, 1 + e), redrawn each cycle
   "missed_surge"  the forecast does not know about planned events
 """
@@ -78,6 +78,6 @@ def scenario_config(net: Network, dm: DemandModel, tt: TravelTime, scenario: str
         breakdowns=[{"route_id": b["route_id"], "at_s": hhmm_to_s(b["at"])} for b in sc.get("breakdowns", [])],
         strategy=strategy, seed=seed,
     )
-    if strategy == "transitpulse":
+    if strategy == "aduthabus":
         cfg.planner = make_planner(net, dm, tt, events, dtype, float(sc["rain_mm"]), error_level, seed)
     return cfg

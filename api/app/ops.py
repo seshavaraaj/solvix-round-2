@@ -251,7 +251,7 @@ def whatif(st: AppState, rec_id: str) -> dict:
         for label, moves in (("without", []), ("with", [mv])):
             cfg = SimConfig(start_s=t, end_s=t + WHATIF_HORIZON_S, day_type=p["day_type"], rain_mm=p["rain_mm"],
                             events=p["events"], breakdowns=[b for b in p["breakdowns"] if b["at_s"] > t],
-                            fleet=fleet, reserve=reserve, strategy="transitpulse", moves=moves, seed=seed,
+                            fleet=fleet, reserve=reserve, strategy="aduthabus", moves=moves, seed=seed,
                             warmup_s=1800, sample_every_s=900)
             sim = Simulation(st.net, st.dm, st.tt, cfg)
             runs[label].append(sim.run())

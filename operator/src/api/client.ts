@@ -1,4 +1,4 @@
-// Fetch wrapper for the TransitPulse API (contract §3–§6).
+// Fetch wrapper for the AduthaBus API (contract §3–§6).
 // admin/src/api/client.ts must stay identical to this file.
 
 import type {

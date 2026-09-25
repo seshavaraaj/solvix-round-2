@@ -15,7 +15,7 @@ function Shell() {
   return (
     <div className="shell">
       <header className="topbar">
-        <strong>TransitPulse Fleet Admin</strong>
+        <strong>AduthaBus Fleet Admin</strong>
         <nav>
           <NavLink to="/routes">Routes</NavLink>
           <NavLink to="/fleet">Fleet</NavLink>

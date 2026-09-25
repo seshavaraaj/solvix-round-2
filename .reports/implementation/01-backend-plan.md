@@ -1,4 +1,4 @@
-# TransitPulse Lite — Backend Implementation Plan (Person A)
+# AduthaBus Lite — Backend Implementation Plan (Person A)
 
 | Field | Value |
 |---|---|
@@ -123,7 +123,7 @@ Done when: event-surge scenario yields a `move_bus` card within 10 s on Render; 
 Files: `api/app/sim/` (shared), `offline/sim/run_batch.py`, `api/app/routers/{whatif,results}.py`
 
 1. SimPy model in `api/app/sim/` (one code base, used offline and online): buses, stops, boardings from demand, segment times from travel-time data, capacity.
-2. Strategies: baseline, baseline + virtual-schedule holding, TransitPulse (holding + auto-approved reallocation).
+2. Strategies: baseline, baseline + virtual-schedule holding, AduthaBus (holding + auto-approved reallocation).
 3. Scenarios: normal weekday, heavy rain, event surge, breakdown.
 4. Robustness: re-run each with demand error 0 / ±20% / ±40% / missed surge.
 5. `run_batch.py` on laptop → `data/artefacts/results.json` in `ScenarioResult` shape (contract §5). `GET /results` serves it.

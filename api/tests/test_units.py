@@ -93,7 +93,7 @@ def test_simulator_move_reduces_overload(core):
     net, dm, tt = core
     sc = net.scenarios["scenarios"]["event_surge"]
     base = dict(start_s=hhmm_to_s("17:00"), end_s=hhmm_to_s("19:00"), events=dm.events_for(sc),
-                strategy="transitpulse", warmup_s=1800)
+                strategy="aduthabus", warmup_s=1800)
     over_wo, over_w = 0, 0
     t0 = time.perf_counter()
     for seed in range(3):

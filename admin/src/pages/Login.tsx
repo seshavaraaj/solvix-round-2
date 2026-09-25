@@ -33,7 +33,7 @@ export function Login() {
   return (
     <div className="login">
       <form onSubmit={submit} className="card">
-        <h1>TransitPulse Fleet Admin</h1>
+        <h1>AduthaBus Fleet Admin</h1>
         <label>
           Username
           <input value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" required />

@@ -1,4 +1,4 @@
-# Solution Review: Solution 1 (TransitPulse) against project constraints
+# Solution Review: Solution 1 (AduthaBus) against project constraints
 
 | Field | Value |
 |---|---|
@@ -11,7 +11,7 @@
 
 **Problem:** Transit agencies run fixed bus timetables that do not react to real demand, traffic, delays, or fleet availability. This causes long waits, overcrowded buses on some routes, empty buses on others, and poor fleet use. The system must analyse historical and real-time data, detect overcrowding, underuse, and emerging delays, and recommend changes to frequency and deployment. The project has zero budget, and every cloud-hosted part must run on Render's free tier.
 
-**Proposed solution:** TransitPulse is a control-room decision-support tool. Every 15 minutes it forecasts demand and travel time (LightGBM), flags four conditions (crowding, underuse, delay, bunching), and runs a fleet reallocation optimiser (OR-Tools CP-SAT). It adds holding and short-turn rules, an LLM explanation layer (Claude API), a React/MapLibre console with approve/reject, a PostgreSQL decision log, and a SimPy simulator that compares strategies.
+**Proposed solution:** AduthaBus is a control-room decision-support tool. Every 15 minutes it forecasts demand and travel time (LightGBM), flags four conditions (crowding, underuse, delay, bunching), and runs a fleet reallocation optimiser (OR-Tools CP-SAT). It adds holding and short-turn rules, an LLM explanation layer (Claude API), a React/MapLibre console with approve/reject, a PostgreSQL decision log, and a SimPy simulator that compares strategies.
 
 **Assumptions made in this review:**
 
@@ -85,7 +85,7 @@ The constraints were not considered. The document names one paid service (Claude
 
 ## 5. Strengthened Solution
 
-Keep TransitPulse's core idea: network-level bus reallocation with human approval. Rebuild the delivery around Render's free tier:
+Keep AduthaBus's core idea: network-level bus reallocation with human approval. Rebuild the delivery around Render's free tier:
 
 - A static React console on a Render static site, with OpenFreeMap tiles.
 - One FastAPI web service that loads pre-trained artefacts and runs request-driven cycles on a replay clock.

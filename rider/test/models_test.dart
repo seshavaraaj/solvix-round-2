@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:transitpulse_rider/api/models.dart';
-import 'package:transitpulse_rider/util/load.dart';
+import 'package:aduthabus_rider/api/models.dart';
+import 'package:aduthabus_rider/util/load.dart';
 
 void main() {
   test('Route parses the contract example', () {

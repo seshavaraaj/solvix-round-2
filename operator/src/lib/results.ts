@@ -35,18 +35,18 @@ export function waitByScenario(res: ScenarioResult) {
 }
 
 /**
- * TransitPulse avg-wait reduction vs baseline (%), averaged over scenarios, per error level.
+ * AduthaBus avg-wait reduction vs baseline (%), averaged over scenarios, per error level.
  * Baseline does not use the forecast, so if it is missing at an error level its level-0 run is used.
  */
 export function robustness(res: ScenarioResult) {
   return res.error_levels.map((level) => {
     const gains: number[] = [];
     for (const scenario of res.scenarios) {
-      const tp = res.rows.find((x) => x.scenario === scenario && x.strategy === "transitpulse" && sameLevel(x.error_level, level));
+      const ab = res.rows.find((x) => x.scenario === scenario && x.strategy === "aduthabus" && sameLevel(x.error_level, level));
       const base =
         res.rows.find((x) => x.scenario === scenario && x.strategy === "baseline" && sameLevel(x.error_level, level)) ??
         res.rows.find((x) => x.scenario === scenario && x.strategy === "baseline" && sameLevel(x.error_level, 0));
-      if (tp && base && base.avg_wait_min > 0) gains.push(((base.avg_wait_min - tp.avg_wait_min) / base.avg_wait_min) * 100);
+      if (ab && base && base.avg_wait_min > 0) gains.push(((base.avg_wait_min - ab.avg_wait_min) / base.avg_wait_min) * 100);
     }
     const gain = gains.length ? gains.reduce((a, b) => a + b, 0) / gains.length : null;
     return { level: errorLevelLabel(level), gain: gain === null ? null : Math.round(gain * 10) / 10 };

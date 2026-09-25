@@ -1,4 +1,4 @@
-# TransitPulse Lite
+# AduthaBus Lite
 
 AI-assisted bus reallocation for a Delhi route cluster: forecast demand, detect
 overcrowded / underused / delayed / bunched routes, and recommend moving buses
@@ -104,14 +104,14 @@ From [`data/artefacts/results.json`](data/artefacts/results.json):
 |---|---|---|---|---|---|
 | Event surge | Baseline | 7.05 | 244 | 32 | 0 |
 | Event surge | Holding | 7.07 | 253 | 25 | 0 |
-| Event surge | TransitPulse (no forecast error) | 7.06 | 160 | 20 | 5.8 |
-| Event surge | TransitPulse (missed surge) | 7.07 | 216 | 13 | 0 |
+| Event surge | AduthaBus (no forecast error) | 7.06 | 160 | 20 | 5.8 |
+| Event surge | AduthaBus (missed surge) | 7.07 | 216 | 13 | 0 |
 | Normal weekday | Holding | 6.83 | 3 | 20 | 0 |
-| Normal weekday | TransitPulse | 7.01 | 18 | 12 | 0 |
+| Normal weekday | AduthaBus | 7.01 | 18 | 12 | 0 |
 
-Read honestly: TransitPulse cuts crowding (overload minutes −34% in the surge)
+Read honestly: AduthaBus cuts crowding (overload minutes −34% in the surge)
 and bunching; it does not cut average wait. On a normal day it makes no moves,
-and schedule-based holding gives slightly shorter waits than TransitPulse's
+and schedule-based holding gives slightly shorter waits than AduthaBus's
 headway-based dispatching. All inputs except weather are synthetic.
 
 ## Deployment (Render free)
@@ -119,7 +119,7 @@ headway-based dispatching. All inputs except weather are synthetic.
 1. Push to GitHub, then in Render: **New → Blueprint** and pick this repo (`render.yaml`).
 2. Set `OPERATOR_PASSWORD` and `ADMIN_PASSWORD` in the dashboard (marked `sync: false`).
 3. Start command runs `scripts/seed_db.py` (creates tables, resets demo passwords from env) then Uvicorn.
-4. After each deploy: `curl https://transitpulse-api.onrender.com/health` and one `/state` call.
+4. After each deploy: `curl https://aduthabus-api.onrender.com/health` and one `/state` call.
 5. Free Postgres expires 30 days after creation: run `DATABASE_URL=<external url> python scripts/export_log.py` before then; recreate with `api/schema.sql` + `seed_db.py`.
 
 Memory and timing (`python scripts/toy_load_test.py`):

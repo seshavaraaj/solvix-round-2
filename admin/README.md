@@ -1,4 +1,4 @@
-# TransitPulse fleet admin portal
+# AduthaBus fleet admin portal
 
 React 18 + Vite + TypeScript. Routes, fleet per depot, decision log with CSV export. This is the first thing to cut if time runs short (contract §9).
 

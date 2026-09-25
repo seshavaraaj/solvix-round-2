@@ -30,7 +30,7 @@ def _bool(name: str, default: bool = False) -> bool:
 
 
 def _database_url() -> str:
-    url = os.getenv("DATABASE_URL", f"sqlite:///{REPO_DIR / 'transitpulse.db'}")
+    url = os.getenv("DATABASE_URL", f"sqlite:///{REPO_DIR / 'aduthabus.db'}")
     # Render gives postgres://...; SQLAlchemy + psycopg 3 wants postgresql+psycopg://
     if url.startswith("postgres://"):
         url = "postgresql+psycopg://" + url[len("postgres://"):]

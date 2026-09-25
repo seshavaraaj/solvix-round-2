@@ -1,4 +1,4 @@
-# Solution 2: TransitPulse Lite — Zero-Budget Bus Reallocation Assistant
+# Solution 2: AduthaBus Lite — Zero-Budget Bus Reallocation Assistant
 
 | Field | Value |
 |---|---|
@@ -6,12 +6,12 @@
 | Problem | AI-Based Dynamic Public Transport Scheduling (`.data/problem-statement.md`) |
 | Constraints | `.data/constraints.md` (zero budget; all cloud parts on Render free tier) |
 | Based on | `solution1.md`, reworked after `solution1-review.md`; landscape report `.reports/2026-09-25_ai-dynamic-bus-scheduling-existing-solutions.md` ("Report") |
-| Working name | **TransitPulse Lite** |
+| Working name | **AduthaBus Lite** |
 | Status | Draft for team review |
 
 ## 1. One-Line Pitch
 
-TransitPulse Lite is a free, three-portal decision-support system for bus networks. One API and one database serve an **operator console** (dispatchers approve or reject reallocation recommendations), a **fleet admin portal** (bus providers configure routes, depots, and fleet size), and a **rider app** (passengers see live buses and report crowding, feeding real demand data back into the forecast). Each recommendation shows its reason and expected effect. The whole system costs nothing to run and is hosted entirely on Render's free tier.
+AduthaBus Lite is a free, three-portal decision-support system for bus networks. One API and one database serve an **operator console** (dispatchers approve or reject reallocation recommendations), a **fleet admin portal** (bus providers configure routes, depots, and fleet size), and a **rider app** (passengers see live buses and report crowding, feeding real demand data back into the forecast). Each recommendation shows its reason and expected effect. The whole system costs nothing to run and is hosted entirely on Render's free tier.
 
 ## 2. What Changed from Solution 1
 
@@ -53,7 +53,7 @@ Development tools are also free: GitHub for code (Render deploys from it), and t
   2. Add a trip from the depot reserve.
   3. Release a bus from a quiet route to the depot.
 - Four detection flags: overcrowded, underused, delay emerging, bunching.
-- A simulator that compares TransitPulse Lite against today's fixed timetable and against virtual-schedule holding.
+- A simulator that compares AduthaBus Lite against today's fixed timetable and against virtual-schedule holding.
 - Three portals sharing one API: operator console (dispatch), fleet admin portal (thin config only), rider app (live view + crowding reports).
 
 **Future work (not in the hackathon build)**
@@ -283,7 +283,7 @@ A discrete-event simulator in SimPy, the same code offline and online.
 
 1. Baseline: fixed timetable, no control.
 2. Baseline + virtual-schedule holding.
-3. TransitPulse Lite: holding + reallocation (recommendations auto-approved in simulation).
+3. AduthaBus Lite: holding + reallocation (recommendations auto-approved in simulation).
 
 **Scenarios**
 
@@ -332,11 +332,11 @@ Every item is free and open source, or a free tier that needs no payment method.
 
 Define both services and the database in one `render.yaml` Blueprint in the repository:
 
-- `transitpulse-operator`: static site. Build command `npm ci && npm run build`. Publish directory `operator/dist`. Environment variable `VITE_API_URL`.
-- `transitpulse-admin`: static site. Build command `npm ci && npm run build`. Publish directory `admin/dist`. Environment variable `VITE_API_URL`.
-- `transitpulse-rider`: static site. Build command `flutter build web`. Publish directory `rider/build/web`. API URL baked in at build time or read from `window.location`.
-- `transitpulse-api`: web service, Python, free plan. Build command `pip install -r api/requirements.txt`. Start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Health check path `/health`.
-- `transitpulse-db`: Postgres, free plan. Its connection string goes to the API as `DATABASE_URL`.
+- `aduthabus-operator`: static site. Build command `npm ci && npm run build`. Publish directory `operator/dist`. Environment variable `VITE_API_URL`.
+- `aduthabus-admin`: static site. Build command `npm ci && npm run build`. Publish directory `admin/dist`. Environment variable `VITE_API_URL`.
+- `aduthabus-rider`: static site. Build command `flutter build web`. Publish directory `rider/build/web`. API URL baked in at build time or read from `window.location`.
+- `aduthabus-api`: web service, Python, free plan. Build command `pip install -r api/requirements.txt`. Start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Health check path `/health`.
+- `aduthabus-db`: Postgres, free plan. Its connection string goes to the API as `DATABASE_URL`.
 
 Rules for the team:
 
@@ -348,7 +348,7 @@ Rules for the team:
 
 ## 9. Differentiation
 
-| Point | TransitPulse Lite | Typical existing tool |
+| Point | AduthaBus Lite | Typical existing tool |
 |---|---|---|
 | Scope | Several routes, one shared fleet | One route, or display only |
 | Output | Specific action with expected effect | Alert or dashboard |
@@ -385,7 +385,7 @@ If time runs short, stop after Phase 3; the result is still a complete, deployed
 3. Jump to the "event surge" scenario on the console. Route 534 turns red: forecast load 125%, boosted by the rider report just sent.
 4. A recommendation card appears: move 2 buses from underused Route 423. Read the explanation.
 5. Run the what-if panel: waiting time and crowding fall on 534, and 423 keeps its minimum service. Approve.
-6. Open the Results tab: baseline vs holding vs TransitPulse Lite across four scenarios, and how much gain remains under ±40% forecast error.
+6. Open the Results tab: baseline vs holding vs AduthaBus Lite across four scenarios, and how much gain remains under ±40% forecast error.
 7. Close with the cost line: three portals, one API, one database — the whole system runs on free tools and free hosting.
 
 ## 12. Risks and Mitigations

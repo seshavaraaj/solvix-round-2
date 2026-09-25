@@ -1,5 +1,5 @@
-name: transitpulse_rider
-description: TransitPulse rider app — live buses, ETAs, alerts and one-tap crowding reports.
+name: aduthabus_rider
+description: AduthaBus rider app — live buses, ETAs, alerts and one-tap crowding reports.
 publish_to: "none"
 version: 0.1.0+1
 

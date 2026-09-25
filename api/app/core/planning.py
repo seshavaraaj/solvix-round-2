@@ -1,5 +1,5 @@
 """Builds optimiser inputs from a demand view. Shared by the API cycle (which
-uses the LightGBM forecast) and the simulator's TransitPulse strategy (which
+uses the LightGBM forecast) and the simulator's AduthaBus strategy (which
 uses the demand formula plus injected forecast error)."""
 from __future__ import annotations
 

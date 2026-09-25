@@ -1,4 +1,4 @@
-# TransitPulse Lite API runtime (Render free web service, Python 3.12).
+# AduthaBus Lite API runtime (Render free web service, Python 3.12).
 # Offline-only libraries live in offline/requirements.txt to keep this image small.
 fastapi==0.141.1
 uvicorn==0.54.0

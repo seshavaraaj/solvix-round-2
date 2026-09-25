@@ -23,11 +23,11 @@ from ..core.demand import DemandModel
 from ..core.network import Network
 from ..core.traveltime import TravelTime
 
-STRATEGIES = ("baseline", "holding", "transitpulse")
+STRATEGIES = ("baseline", "holding", "aduthabus")
 MIN_LAYOVER_S = 120.0
 MAX_MID_HOLD_S = 180.0
-TERMINAL_SPACING = 0.85       # transitpulse: depart >= 0.85 x headway after the previous bus
-MID_SPACING = 0.7             # transitpulse: hold mid-route until 0.7 x headway after the previous bus
+TERMINAL_SPACING = 0.85       # aduthabus: depart >= 0.85 x headway after the previous bus
+MID_SPACING = 0.7             # aduthabus: hold mid-route until 0.7 x headway after the previous bus
 CHUNK_S = 300.0
 
 
@@ -291,7 +291,7 @@ class Simulation:
         norm = self._norm_times(bus.route_id, direction, sched_start / 60)
         mid = n // 2
         hold = self.cfg.strategy == "holding"
-        headway_ctl = self.cfg.strategy == "transitpulse"
+        headway_ctl = self.cfg.strategy == "aduthabus"
         for i in range(start_idx, n):
             if bus.broken:
                 return

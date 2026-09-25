@@ -1,4 +1,4 @@
-# TransitPulse rider app
+# AduthaBus rider app
 
 Flutter, Web target (installable PWA), with an optional sideloaded APK. There are three screens: live map with stop ETAs, My routes with alerts, and "I'm on this bus" with one-tap crowding reports.
 
@@ -7,7 +7,7 @@ Flutter, Web target (installable PWA), with an optional sideloaded APK. There ar
 This folder holds the source files only. Generate the platform scaffolding once. Existing files are kept:
 
 ```bash
-flutter create --platforms=web,android --project-name transitpulse_rider .
+flutter create --platforms=web,android --project-name aduthabus_rider .
 flutter pub get
 ```
 
@@ -23,8 +23,8 @@ For the APK, add location permission to `android/app/src/main/AndroidManifest.xm
 ```bash
 flutter run -d chrome --web-port 8080 --dart-define=API_URL=http://localhost:8000
 flutter test
-flutter build web --release --dart-define=API_URL=https://transitpulse-api.onrender.com
-flutter build apk --release --dart-define=API_URL=https://transitpulse-api.onrender.com   # optional, sideload only
+flutter build web --release --dart-define=API_URL=https://aduthabus-api.onrender.com
+flutter build apk --release --dart-define=API_URL=https://aduthabus-api.onrender.com   # optional, sideload only
 ```
 
 Render build command and fallback: `.reports/implementation/03-frontend-handoff.md`.

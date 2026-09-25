@@ -54,7 +54,7 @@ export function Results() {
       </section>
 
       <section className="chart-box">
-        <h3 className="chart-title">TransitPulse wait reduction vs baseline, under forecast error (%)</h3>
+        <h3 className="chart-title">AduthaBus wait reduction vs baseline, under forecast error (%)</h3>
         <p className="muted small">Averaged over all scenarios. How much of the gain survives a worse forecast.</p>
         <ResponsiveContainer width="100%" height={200}>
           <BarChart data={robust} margin={{ top: 20, right: 8, bottom: 0, left: -12 }}>
@@ -62,7 +62,7 @@ export function Results() {
             <XAxis dataKey="level" tick={tick} stroke={CHART.axis} interval={0} />
             <YAxis tick={tick} stroke={CHART.axis} unit="%" />
             <Tooltip formatter={(v) => `${v}%`} />
-            <Bar dataKey="gain" name="Wait reduction" fill={STRATEGY_COLOR.transitpulse} radius={[4, 4, 0, 0]}>
+            <Bar dataKey="gain" name="Wait reduction" fill={STRATEGY_COLOR.aduthabus} radius={[4, 4, 0, 0]}>
               <LabelList dataKey="gain" position="top" formatter={(v: unknown) => (v == null ? "" : `${v}%`)} style={{ fill: "var(--text-2)", fontSize: 11 }} />
             </Bar>
           </BarChart>
