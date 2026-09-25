@@ -54,7 +54,7 @@ def fixture(name):
     ("get", "/state", None, None, "op", "state.json"),
     ("get", "/routes", None, None, None, "routes.json"),
     ("get", "/buses", None, None, None, "buses.json"),
-    ("get", "/eta", {"stop_id": "stop_1021"}, None, None, "eta.json"),
+    ("get", "/eta", {"stop_id": "1465"}, None, None, "eta.json"),
     ("get", "/recommendations", None, None, "op", "recommendations.json"),
     ("get", "/results", None, None, None, "results.json"),
     ("get", "/alerts", None, None, None, "alerts.json"),
@@ -92,8 +92,8 @@ def test_cycle_whatif_decisions_match_fixtures(client, op, admin, surge):
 
 
 def test_crowding_matches_fixture(client, rider):
-    bus = client.get("/buses", params={"route_id": "511"}).json()[0]
-    r = client.post("/crowding", json={"bus_id": bus["id"], "route_id": "511", "level": "ok"}, headers=rider)
+    bus = client.get("/buses", params={"route_id": "5E"}).json()[0]
+    r = client.post("/crowding", json={"bus_id": bus["id"], "route_id": "5E", "level": "ok"}, headers=rider)
     assert r.status_code == 201
     same_shape(r.json(), fixture("crowding.json"))
 

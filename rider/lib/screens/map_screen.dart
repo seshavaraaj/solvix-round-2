@@ -10,7 +10,7 @@ import '../api/models.dart';
 import '../config.dart';
 import '../util/load.dart';
 
-const _delhi = LatLng(28.6, 77.25);
+const _chennai = LatLng(13.03, 80.24);
 
 /// Live map of the route cluster. Buses refresh every 5 s; tap a stop for ETAs.
 class MapScreen extends StatefulWidget {
@@ -99,7 +99,7 @@ class _MapScreenState extends State<MapScreen> {
         FlutterMap(
           mapController: _map,
           options: MapOptions(
-            initialCenter: _delhi,
+            initialCenter: _chennai,
             initialZoom: 11.5,
             backgroundColor: const Color(0xFFEEF0EE),
             onMapReady: () {

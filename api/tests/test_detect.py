@@ -2,7 +2,7 @@
 from app.core.detect import bunching, delay_emerging, overcrowded, underused
 
 BANDS = [17.25 * 3600 + i * 900 for i in range(4)]
-STOPS = ["A", "B", "Nehru Place", "D"]
+STOPS = ["A", "B", "Guindy", "D"]
 
 
 def test_overcrowded_fires_and_names_stop():
@@ -10,7 +10,7 @@ def test_overcrowded_fires_and_names_stop():
     lf90 = [[0.6, 0.9, 1.25]] * 4
     f = overcrowded(lf50, lf90, STOPS[:3], BANDS)
     assert f.on and f.confidence == "high"
-    assert f.evidence == "P90 load 1.25 at Nehru Place, 17:15–18:15"
+    assert f.evidence == "P90 load 1.25 at Guindy, 17:15–18:15"
 
 
 def test_overcrowded_off_below_capacity():
@@ -31,9 +31,9 @@ def test_underused_needs_60_minutes():
 
 
 def test_delay_emerging_segment_sigma():
-    seg = [{"name": "Ashram → Lajpat Nagar", "observed_s": 480, "expected_s": 300, "n": 3}]
+    seg = [{"name": "Nandanam → Saidapet", "observed_s": 480, "expected_s": 300, "n": 3}]
     f = delay_emerging(seg, delay_now_min=1.0, delay_prev_min=1.0, cv=0.12)
-    assert f.on and "Ashram → Lajpat Nagar" in f.evidence
+    assert f.on and "Nandanam → Saidapet" in f.evidence
 
 
 def test_delay_emerging_growing_delay():

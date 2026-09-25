@@ -1,5 +1,13 @@
 [
  {
+  "recommendation_id": "rec_0002",
+  "decision": "reject",
+  "reason": "no_driver",
+  "note": "Driver shift ends 18:00",
+  "decided_by": "operator",
+  "decided_at": "2026-09-25T17:15:00+05:30"
+ },
+ {
   "recommendation_id": "rec_0001",
   "decision": "approve",
   "reason": null,

@@ -1,19 +1,19 @@
 [
  {
-  "depot_id": "depot_kalkaji",
-  "name": "Kalkaji Depot",
-  "lat": 28.542,
-  "lon": 77.256,
+  "depot_id": "depot_adyar",
+  "name": "Adyar Depot",
+  "lat": 13.0067,
+  "lon": 80.2532,
   "fleet_size": 16,
   "reserve": 2,
   "out_of_service": 0
  },
  {
-  "depot_id": "depot_okhla",
-  "name": "Okhla Depot",
-  "lat": 28.53,
-  "lon": 77.27,
-  "fleet_size": 30,
+  "depot_id": "depot_tnagar",
+  "name": "T. Nagar Depot",
+  "lat": 13.0347,
+  "lon": 80.23,
+  "fleet_size": 44,
   "reserve": 4,
   "out_of_service": 1
  }

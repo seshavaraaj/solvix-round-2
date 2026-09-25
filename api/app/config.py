@@ -58,9 +58,7 @@ class Settings:
     live_mode: bool = field(default_factory=lambda: _bool("LIVE_MODE"))
     gtfs_rt_key: str | None = field(default_factory=lambda: os.getenv("GTFS_RT_KEY") or None)
     gtfs_rt_url: str = field(
-        default_factory=lambda: os.getenv(
-            "GTFS_RT_URL", "https://otd.delhi.gov.in/api/realtime/VehiclePositions.pb"
-        )
+        default_factory=lambda: os.getenv("GTFS_RT_URL", "")
     )
     artefacts_dir: Path = field(
         default_factory=lambda: Path(os.getenv("ARTEFACTS_DIR", str(REPO_DIR / "data" / "artefacts")))

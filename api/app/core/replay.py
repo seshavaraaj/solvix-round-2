@@ -353,7 +353,7 @@ class Replay:
             if from_route is None:
                 depot = self.net.depots[self.net.routes[to_route].depot_id]
                 for i in range(count):
-                    bus_id = f"bus_DL1PR{len([b for b in tls if b.startswith('bus_DL1PR')]) + 1:02d}"
+                    bus_id = f"bus_TN01R{len([b for b in tls if b.startswith('bus_TN01R')]) + 1:02d}"
                     tl = Timeline(bus_id, *(np.array([], dtype=dt) for dt in (object, np.int8, np.int16)),
                                   *(np.array([]) for _ in range(4)), np.array([], dtype=object),
                                   start_s=t + i * 60, depot_id=depot.id)

@@ -1,62 +1,62 @@
 [
  {
-  "bus_id": "bus_DL1PC1403",
-  "route_id": "717",
-  "eta_min": 3.2,
-  "load_factor": 0.03
+  "bus_id": "bus_TN01N1006",
+  "route_id": "3",
+  "eta_min": 3.8,
+  "load_factor": 0.21
  },
  {
-  "bus_id": "bus_DL1PC1301",
-  "route_id": "604",
-  "eta_min": 7.9,
-  "load_factor": 0.11
+  "bus_id": "bus_TN01N1000",
+  "route_id": "3",
+  "eta_min": 5.5,
+  "load_factor": 0.19
  },
  {
-  "bus_id": "bus_DL1PC1200",
-  "route_id": "534",
-  "eta_min": 9.8,
-  "load_factor": 0.35
+  "bus_id": "bus_TN01N1300",
+  "route_id": "9M",
+  "eta_min": 7.0,
+  "load_factor": 0.01
  },
  {
-  "bus_id": "bus_DL1PC1213",
-  "route_id": "534",
-  "eta_min": 12.0,
-  "load_factor": 0.14
+  "bus_id": "bus_TN01N1303",
+  "route_id": "9M",
+  "eta_min": 7.0,
+  "load_factor": 0.02
  },
  {
-  "bus_id": "bus_DL1PC1402",
-  "route_id": "717",
-  "eta_min": 20.9,
-  "load_factor": 0.1
- },
- {
-  "bus_id": "bus_DL1PC1300",
-  "route_id": "604",
-  "eta_min": 21.3,
+  "bus_id": "bus_TN01N1005",
+  "route_id": "3",
+  "eta_min": 11.4,
   "load_factor": 0.15
  },
  {
-  "bus_id": "bus_DL1PC1212",
-  "route_id": "534",
-  "eta_min": 23.8,
-  "load_factor": 0.15
- },
- {
-  "bus_id": "bus_DL1PC1211",
-  "route_id": "534",
-  "eta_min": 33.3,
-  "load_factor": 0.15
- },
- {
-  "bus_id": "bus_DL1PC1305",
-  "route_id": "604",
-  "eta_min": 35.6,
+  "bus_id": "bus_TN01N1016",
+  "route_id": "3",
+  "eta_min": 14.8,
   "load_factor": 0.27
  },
  {
-  "bus_id": "bus_DL1PC1210",
-  "route_id": "534",
-  "eta_min": 45.0,
-  "load_factor": 0.13
+  "bus_id": "bus_TN01N1004",
+  "route_id": "3",
+  "eta_min": 17.8,
+  "load_factor": 0.17
+ },
+ {
+  "bus_id": "bus_TN01N1015",
+  "route_id": "3",
+  "eta_min": 19.7,
+  "load_factor": 0.14
+ },
+ {
+  "bus_id": "bus_TN01N1014",
+  "route_id": "3",
+  "eta_min": 25.0,
+  "load_factor": 0.19
+ },
+ {
+  "bus_id": "bus_TN01N1013",
+  "route_id": "3",
+  "eta_min": 33.1,
+  "load_factor": 0.25
  }
 ]

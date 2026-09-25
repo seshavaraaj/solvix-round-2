@@ -25,7 +25,7 @@ def test_demand_matrix_column_order():
 def test_base_demand_peaks_in_evening(core):
     net, dm, _ = core
     base = BaseDemand(net, dm)
-    assert base.get("534", 1, 0, 18 * 4) > base.get("534", 1, 0, 3 * 4) > 0
+    assert base.get("3", 1, 0, 18 * 4) > base.get("3", 1, 0, 3 * 4) > 0
 
 
 def test_time_roundtrip():
@@ -36,21 +36,23 @@ def test_time_roundtrip():
 
 def test_ipf_rows_match_boardings_and_loads_non_negative(core):
     net, dm, _ = core
-    b = np.array([10, 5, 8, 3, 2, 0, 1, 4, 0], dtype=float)
-    _, alight = dm._weights("534", 0, 18 * 60)
-    od = ipf_trip(b, dm.dest_probs("534", 0, 18 * 60), alight)
+    n = len(net.routes["3"].stop_ids)
+    b = np.resize(np.array([10, 5, 8, 3, 2, 0, 1, 4], dtype=float), n)
+    b[-1] = 0.0                                   # nobody boards at the terminus
+    _, alight = dm._weights("3", 0, 18 * 60)
+    od = ipf_trip(b, dm.dest_probs("3", 0, 18 * 60), alight)
     assert np.allclose(od.sum(axis=1), b)
     load = onboard_from_od(od)
     assert (load >= -1e-9).all() and abs(load[-1]) < 1e-9
-    flow = segment_flow(np.ones(9), dm.dest_probs("534", 0, 18 * 60))
-    assert len(flow) == 8 and flow.max() > 0
+    flow = segment_flow(np.ones(n), dm.dest_probs("3", 0, 18 * 60))
+    assert len(flow) == n - 1 and flow.max() > 0
 
 
 def test_crowding_blend_capped_at_30_percent():
     now = time.time()
-    many = [Report("d", "b", "534", "crowded", now) for _ in range(50)]
+    many = [Report("d", "b", "3", "crowded", now) for _ in range(50)]
     assert blend(0.5, many, now) <= 0.5 * (1 + CAP) + 1e-9
-    empty = [Report("d", "b", "534", "empty", now) for _ in range(50)]
+    empty = [Report("d", "b", "3", "empty", now) for _ in range(50)]
     assert blend(1.0, empty, now) >= 1.0 * (1 - CAP) - 1e-9
     assert blend(0.8, [], now) == 0.8
 
@@ -65,7 +67,7 @@ def test_crowding_recency_decay():
 def test_crowding_rate_limit():
     s = CrowdingStore()
     now = time.time()
-    s.add(Report("dev", "bus1", "534", "ok", now))
+    s.add(Report("dev", "bus1", "3", "ok", now))
     assert not s.allowed("dev", "bus1", now + 60)
     assert s.allowed("dev", "bus2", now + 60)
     assert s.allowed("dev", "bus1", now + 301)
@@ -73,7 +75,7 @@ def test_crowding_rate_limit():
 
 def test_template_numbers_come_from_record():
     rec = {
-        "action": "move_bus", "from_route_id": "423", "to_route_id": "534", "bus_count": 2,
+        "action": "move_bus", "from_route_id": "9M", "to_route_id": "3", "bus_count": 2,
         "window_start": "2026-09-25T17:30:00+05:30", "window_end": "2026-09-25T19:00:00+05:30",
         "expected_effect": {
             "to_route": {"wait_min_before": 11.0, "wait_min_after": 7.0, "peak_load_before": 1.25,
@@ -82,9 +84,9 @@ def test_template_numbers_come_from_record():
                            "peak_load_after": 0.41}},
         "deadhead_km": 6.0, "confidence": "high",
     }
-    text = explain(rec, {"to_stop": "Nehru Place", "depot_name": "Okhla Depot", "from_min_headway": 15})
-    assert text.startswith("Move 2 buses from Route 423 to Route 534, 17:30–19:00.")
-    for piece in ("125%", "Nehru Place", "28%", "from 11 to 7 minutes", "15-minute minimum", "6 km",
+    text = explain(rec, {"to_stop": "Guindy", "depot_name": "Adyar Depot", "from_min_headway": 15})
+    assert text.startswith("Move 2 buses from Route 9M to Route 3, 17:30–19:00.")
+    for piece in ("125%", "Guindy", "28%", "from 11 to 7 minutes", "15-minute minimum", "6 km",
                   "Confidence: high"):
         assert piece in text
 
@@ -98,7 +100,7 @@ def test_simulator_move_reduces_overload(core):
     t0 = time.perf_counter()
     for seed in range(3):
         over_wo += Simulation(net, dm, tt, SimConfig(**base, seed=seed)).run()["overload_min"]
-        mv = Move(hhmm_to_s("17:00"), "423", "534", 2, 2.9)
+        mv = Move(hhmm_to_s("17:00"), "9M", "3", 2, 2.9)
         over_w += Simulation(net, dm, tt, SimConfig(**base, seed=seed, moves=[mv])).run()["overload_min"]
     assert over_w < over_wo
     assert time.perf_counter() - t0 < 20

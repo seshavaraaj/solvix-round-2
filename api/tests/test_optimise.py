@@ -35,12 +35,12 @@ def _check_min_frequency(problem, plan):
 
 
 def test_crowded_route_receives_from_quiet_route():
-    busy = _route("534", 14, 156, 15, board=18, flow=7.0)
-    quiet = _route("423", 8, 115, 20, board=3, flow=1.0)
+    busy = _route("3", 14, 156, 15, board=18, flow=7.0)
+    quiet = _route("9M", 8, 115, 20, board=3, flow=1.0)
     plan = solve(_problem([busy, quiet], reserve=0))
     assert plan.solver == "cp_sat"
     moves = [a for a in plan.actions if a.action == "move_bus"]
-    assert moves and moves[0].from_route_id == "423" and moves[0].to_route_id == "534"
+    assert moves and moves[0].from_route_id == "9M" and moves[0].to_route_id == "3"
     assert all(a.bus_count <= MAX_BUSES_PER_ACTION for a in plan.actions)
     _check_min_frequency(_problem([busy, quiet]), plan)
 
@@ -62,28 +62,28 @@ def test_min_frequency_never_violated_random(seed):
 
 
 def test_greedy_matches_direction_of_cp_sat():
-    busy = _route("534", 14, 156, 15, board=18, flow=7.0)
-    quiet = _route("423", 8, 115, 20, board=3, flow=1.0)
+    busy = _route("3", 14, 156, 15, board=18, flow=7.0)
+    quiet = _route("9M", 8, 115, 20, board=3, flow=1.0)
     g = solve_greedy(_problem([busy, quiet], reserve=0))
     assert g.solver == "greedy"
-    assert [(a.from_route_id, a.to_route_id) for a in g.actions] == [("423", "534")]
+    assert [(a.from_route_id, a.to_route_id) for a in g.actions] == [("9M", "3")]
 
 
 def test_reversal_is_blocked():
-    busy = _route("534", 14, 156, 15, board=18, flow=7.0)
-    quiet = _route("423", 8, 115, 20, board=3, flow=1.0)
+    busy = _route("3", 14, 156, 15, board=18, flow=7.0)
+    quiet = _route("9M", 8, 115, 20, board=3, flow=1.0)
     p = _problem([busy, quiet], reserve=0)
-    p.no_donate, p.no_receive = {"423"}, set()
-    assert not [a for a in solve(p).actions if a.from_route_id == "423"]
+    p.no_donate, p.no_receive = {"9M"}, set()
+    assert not [a for a in solve(p).actions if a.from_route_id == "9M"]
 
 
-def test_event_surge_scenario_moves_bus_to_534(core):
+def test_event_surge_scenario_moves_bus_to_route_3(core):
     net, dm, tt = core
     sc = net.scenarios["scenarios"]["event_surge"]
     ev = dm.events_for(sc)
     f50 = lambda r, d, m: dm.board_rate(r, d, m, "weekday", 0.0, ev)  # noqa: E731
     f90 = lambda r, d, m: 1.25 * f50(r, d, m)  # noqa: E731
     inputs = route_inputs(net, dm, tt, hhmm_to_s("17:15"), planned_fleet(net, tt), f50, f90)
-    plan = solve(build_problem(net, inputs, {"depot_okhla": 0, "depot_kalkaji": 0}))
-    assert any(a.action == "move_bus" and a.to_route_id == "534" for a in plan.actions)
+    plan = solve(build_problem(net, inputs, {"depot_adyar": 0, "depot_tnagar": 0}))
+    assert any(a.action == "move_bus" and a.to_route_id == "3" for a in plan.actions)
     assert math.isfinite(plan.objective)

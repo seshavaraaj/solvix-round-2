@@ -65,7 +65,7 @@ def main() -> None:
         save("state.json", c.get("/state", headers=op).json())
         save("routes.json", c.get("/routes").json())
         save("buses.json", c.get("/buses").json())
-        save("eta.json", c.get("/eta", params={"stop_id": "stop_1021"}).json())
+        save("eta.json", c.get("/eta", params={"stop_id": "1465"}).json())
         cyc = c.post("/cycle", headers=op).json()
         save("cycle.json", cyc)
         recs = cyc["recommendations"]
@@ -81,8 +81,8 @@ def main() -> None:
         save("decisions.json", c.get("/decisions", headers=ad).json())
         save("decisions.csv", c.get("/decisions.csv", headers=ad).text)
         save("results.json", c.get("/results").json())
-        bus = c.get("/buses", params={"route_id": "534"}).json()[0]
-        save("crowding.json", c.post("/crowding", json={"bus_id": bus["id"], "route_id": "534", "level": "crowded",
+        bus = c.get("/buses", params={"route_id": "3"}).json()[0]
+        save("crowding.json", c.post("/crowding", json={"bus_id": bus["id"], "route_id": "3", "level": "crowded",
                                                           "lat": bus["lat"], "lon": bus["lon"]}, headers=rider).json())
         save("alerts.json", c.get("/alerts").json())
         save("admin_routes.json", c.get("/admin/routes", headers=ad).json())

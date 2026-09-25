@@ -21,19 +21,19 @@ scenarios:
     events: []
     breakdowns: []
   event_surge:
-    label: Event surge at Nehru Place
+    label: Event surge at Guindy
     date: "2026-09-25"
     rain_mm: 0.0
     temp_c: 30.0
-    # A planned exhibition closes at Nehru Place; heavy flow toward Anand Vihar.
+    # A large event near Guindy ends; heavy flow onto Route 3 toward T. Nagar and Thiruvanmiyur.
     events:
-      - {stops: [stop_1021, stop_1008, stop_1006], start: "17:15", end: "19:00", factor: 2.6}
+      - {stops: ["1465", "1048", "5766"], start: "17:15", end: "19:00", factor: 2.5}
     breakdowns: []
   breakdown:
-    label: Bus breakdown on Route 534
+    label: Bus breakdown on Route 3
     date: "2026-09-22"
     rain_mm: 0.0
     temp_c: 31.0
     events: []
     breakdowns:
-      - {route_id: "534", at: "17:10"}
+      - {route_id: "3", at: "17:10"}

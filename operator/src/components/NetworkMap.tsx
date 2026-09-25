@@ -13,7 +13,7 @@ const BLANK_STYLE: StyleSpecification = {
   layers: [{ id: "background", type: "background", paint: { "background-color": "#eef0ee" } }],
 };
 
-const DELHI: [number, number] = [77.25, 28.6];
+const CHENNAI: [number, number] = [80.24, 13.03];
 
 interface Props {
   routes: Route[];
@@ -73,23 +73,28 @@ export function NetworkMap({ routes, buses, focusRouteId }: Props) {
 
   useEffect(() => {
     if (!container.current) return;
-    const map = new maplibregl.Map({ container: container.current, style: STYLE_URL, center: DELHI, zoom: 11 });
+    const map = new maplibregl.Map({ container: container.current, style: STYLE_URL, center: CHENNAI, zoom: 11 });
     mapRef.current = map;
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
+    // Track the style document ourselves: map.isStyleLoaded() is also false while tiles or GeoJSON
+    // updates are pending, which would swap a working basemap for the blank one.
+    let styleReady = false;
     let fellBack = false;
     const fallBack = () => {
-      if (fellBack) return;
+      if (fellBack || styleReady) return;
       fellBack = true;
-      map.setStyle(BLANK_STYLE);
+      // diff: false forces a full reload so "style.load" fires and our layers are re-added.
+      map.setStyle(BLANK_STYLE, { diff: false });
     };
-    const timer = setTimeout(() => !map.isStyleLoaded() && fallBack(), STYLE_TIMEOUT_MS);
-    map.on("error", () => {
-      if (!map.isStyleLoaded()) fallBack();
-    });
+    const timer = setTimeout(fallBack, STYLE_TIMEOUT_MS);
+    map.on("error", fallBack);
 
     // "style.load" fires for the initial style and again after a fallback setStyle, so layers are re-added.
     map.on("style.load", () => {
+      styleReady = true;
+      clearTimeout(timer);
+      if (map.getSource("routes")) return;
       const { routes, buses } = data.current;
       map.addSource("routes", { type: "geojson", data: routesGeoJSON(routes) });
       map.addSource("stops", { type: "geojson", data: stopsGeoJSON(routes) });

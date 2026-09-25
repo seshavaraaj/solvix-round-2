@@ -24,13 +24,13 @@ import polars as pl
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common import ARTEFACTS  # noqa: E402
 
-DELHI = (28.61, 77.21)
+CHENNAI = (13.08, 80.27)
 ARCHIVE = "https://archive-api.open-meteo.com/v1/archive"
 
 
 def fetch_open_meteo(start: str, end: str) -> pl.DataFrame:
     q = urllib.parse.urlencode({
-        "latitude": DELHI[0], "longitude": DELHI[1], "start_date": start, "end_date": end,
+        "latitude": CHENNAI[0], "longitude": CHENNAI[1], "start_date": start, "end_date": end,
         "hourly": "precipitation,temperature_2m", "timezone": "Asia/Kolkata",
     })
     with urllib.request.urlopen(f"{ARCHIVE}?{q}", timeout=30) as resp:

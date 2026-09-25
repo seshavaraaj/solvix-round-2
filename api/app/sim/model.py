@@ -87,7 +87,7 @@ def bus_ids_for(net: Network, fleet: dict[str, int]) -> dict[str, list[str]]:
     out: dict[str, list[str]] = {}
     k = 1000
     for rid in sorted(net.routes):
-        out[rid] = [f"bus_DL1PC{k + i}" for i in range(fleet.get(rid, 0))]
+        out[rid] = [f"bus_TN01N{k + i}" for i in range(fleet.get(rid, 0))]
         k += 100
     return out
 
@@ -384,7 +384,7 @@ class Simulation:
     def _spawn_reserve(self, depot_id: str, route_id: str):
         env = self.env
         depot = self.net.depots[depot_id]
-        bus = self._new_bus(f"bus_DL1PR{self._next_reserve:02d}", route_id)
+        bus = self._new_bus(f"bus_TN01R{self._next_reserve:02d}", route_id)
         self._next_reserve += 1
         r = self.net.routes[route_id]
         from ..core.network import haversine_km

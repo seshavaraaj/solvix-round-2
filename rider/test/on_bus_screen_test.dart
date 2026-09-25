@@ -10,11 +10,11 @@ import 'package:aduthabus_rider/screens/on_bus_screen.dart';
 import 'package:aduthabus_rider/state/prefs.dart';
 
 const _bus = {
-  'id': 'bus_DL1PC1234',
-  'route_id': '534',
+  'id': 'bus_TN01N1234',
+  'route_id': '3',
   'direction': 0,
-  'lat': 28.561,
-  'lon': 77.262,
+  'lat': 13.021,
+  'lon': 80.223,
   'bearing': 210,
   'load_factor': 1.18,
   'delay_min': 6.5,
@@ -54,7 +54,7 @@ Future<void> _openBus(WidgetTester tester, ApiClient client) async {
     home: Scaffold(body: OnBusScreen(client: client, locate: () async => null)),
   ));
   await tester.pumpAndSettle();
-  await tester.tap(find.textContaining('bus_DL1PC1234'));
+  await tester.tap(find.textContaining('bus_TN01N1234'));
   await tester.pumpAndSettle();
 }
 
@@ -69,8 +69,8 @@ void main() {
 
       expect(sent, hasLength(1));
       expect(sent.single['level'], level);
-      expect(sent.single['bus_id'], 'bus_DL1PC1234');
-      expect(sent.single['route_id'], '534');
+      expect(sent.single['bus_id'], 'bus_TN01N1234');
+      expect(sent.single['route_id'], '3');
       expect(find.text(thanksMessage), findsOneWidget);
     });
   }

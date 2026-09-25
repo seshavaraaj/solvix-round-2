@@ -1,10 +1,12 @@
-"""Record the Delhi OTD GTFS-realtime VehiclePositions feed (plan B1.3).
+"""Record a GTFS-realtime VehiclePositions feed (plan B1.3).
 
 Polls every 30 s and appends one row per vehicle position for the cluster
 routes to data/raw/rt/<date>.parquet (git-ignored). Record at least 3
 weekdays and 1 weekend day, then run clean_rt.py and derive.py.
 
-The API key comes from GTFS_RT_KEY in a local .env file. Never commit it.
+The feed URL comes from GTFS_RT_URL and the API key from GTFS_RT_KEY in a
+local .env file. Never commit the key. Chennai MTC has no public GTFS-RT feed
+yet, so there is no default URL.
 
 Run: python offline/data_prep/record_rt.py [--hours 4]
 Needs: pip install gtfs-realtime-bindings (offline/requirements.txt)
@@ -60,9 +62,11 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--hours", type=float, default=4.0)
     args = ap.parse_args()
+    if not settings.gtfs_rt_url:
+        sys.exit("Set GTFS_RT_URL in .env (no public Chennai MTC feed exists yet)")
     key = settings.gtfs_rt_key or os.getenv("GTFS_RT_KEY")
     if not key:
-        sys.exit("Set GTFS_RT_KEY in .env (free key from otd.delhi.gov.in)")
+        sys.exit("Set GTFS_RT_KEY in .env (key for the feed at GTFS_RT_URL)")
     routes = set(pl.read_parquet(ARTEFACTS / "gtfs" / "routes.parquet")["route_id"].to_list())
     out_dir = RAW / "rt"
     out_dir.mkdir(parents=True, exist_ok=True)

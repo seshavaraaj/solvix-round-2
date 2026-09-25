@@ -8,21 +8,21 @@ Rows: 627,480 train+valid, 105,840 valid.
 
 | Metric | Value |
 |---|---|
-| MAE P50 | 2.46 |
-| MAE calendar baseline (formula, no model) | 2.57 |
-| Pinball loss P50 | 1.230 |
-| Pinball loss P90 | 0.579 |
-| P90 coverage (share of actuals <= P90) | 0.952 |
-| Mean target | 9.43 |
+| MAE P50 | 4.03 |
+| MAE calendar baseline (formula, no model) | 5.32 |
+| Pinball loss P50 | 2.014 |
+| Pinball loss P90 | 0.955 |
+| P90 coverage (share of actuals <= P90) | 0.947 |
+| Mean target | 24.47 |
 
 ## Travel time (segment running time, seconds)
 
-Rows: 348,600 train+valid, 58,800 valid.
+Rows: 1,394,400 train+valid, 235,200 valid.
 
 | Metric | Value |
 |---|---|
-| MAE | 23.1 s |
-| MAPE | 5.9 % |
-| Mean target | 389.0 s |
+| MAE | 5.4 s |
+| MAPE | 5.7 % |
+| Mean target | 94.6 s |
 
 Data is synthetic until real ETM and recorded GTFS-RT are available (see README).

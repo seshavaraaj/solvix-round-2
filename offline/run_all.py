@@ -1,6 +1,6 @@
 """Rebuild every artefact in data/artefacts/ in order (offline lane, laptop).
 
-  1. build_network   route cluster -> gtfs/*.parquet, config.json
+  1. gtfs_subset     Chennai GTFS route cluster -> gtfs/*.parquet, config.json
   2. weather         Open-Meteo history (synthetic fallback when offline)
   3. synthetic_etm   history boardings (ETM stand-in)
   4. derive          history segment running times
@@ -33,11 +33,11 @@ def run(*args: str) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--skip-network", action="store_true", help="keep gtfs/ from gtfs_subset.py")
+    ap.add_argument("--skip-network", action="store_true", help="keep gtfs/ from an earlier gtfs_subset.py run")
     ap.add_argument("--seeds", default="5")
     args = ap.parse_args()
     if not args.skip_network:
-        run("offline/data_prep/build_network.py")
+        run("offline/data_prep/gtfs_subset.py")
     run("offline/data_prep/weather.py")
     run("offline/data_prep/synthetic_etm.py")
     run("offline/data_prep/derive.py")

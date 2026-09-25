@@ -7,7 +7,7 @@ One folder per scenario in data/artefacts/replay/<scenario>/:
   dark.parquet    bus_id, start_s, end_s (no position reports in between)
   meta.json       window, fleet, bus ids, depots, driver shift ends, breakdowns
 
-Source: until 3+ days of Delhi GTFS-RT are recorded (record_rt.py ->
+Source: until 3+ days of GTFS-RT are recorded (record_rt.py ->
 clean_rt.py -> derive.py --real), the service window is generated with the
 simulator's baseline strategy (fixed timetable, no control), so the replay
 shows the realistic bunching and crowding that the optimiser should fix.

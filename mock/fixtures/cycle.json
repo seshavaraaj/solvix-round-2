@@ -6,33 +6,64 @@
    "id": "rec_0001",
    "created_at": "2026-09-25T17:15:00+05:30",
    "action": "move_bus",
-   "from_route_id": "423",
-   "to_route_id": "534",
+   "from_route_id": "9M",
+   "to_route_id": "3",
    "bus_count": 1,
    "window_start": "2026-09-25T17:30:00+05:30",
    "window_end": "2026-09-25T19:00:00+05:30",
    "trigger_flags": [
     "overcrowded",
-    "underused",
-    "bunching"
+    "underused"
    ],
    "expected_effect": {
     "to_route": {
-     "wait_min_before": 5.6,
-     "wait_min_after": 5.2,
-     "peak_load_before": 1.13,
-     "peak_load_after": 1.06
+     "wait_min_before": 3.7,
+     "wait_min_after": 3.5,
+     "peak_load_before": 1.17,
+     "peak_load_after": 1.11
     },
     "from_route": {
-     "wait_min_before": 7.2,
-     "wait_min_after": 8.2,
-     "peak_load_before": 0.31,
-     "peak_load_after": 0.36
+     "wait_min_before": 6.9,
+     "wait_min_after": 8.3,
+     "peak_load_before": 0.33,
+     "peak_load_after": 0.4
     }
    },
-   "deadhead_km": 2.9,
-   "confidence": "high",
-   "explanation": "Move 1 bus from Route 423 to Route 534, 17:30–19:00. Route 534 is forecast at 113% of capacity near Lajpat Nagar (P90); Route 423 is at 31%. Expected effect: average wait on 534 falls from 5.6 to 5.2 minutes and peak load from 113% to 106%; 423 keeps its 20-minute minimum frequency (wait 7.2 to 8.2 minutes). Extra empty travel: 2.9 km. Confidence: high.",
+   "deadhead_km": 0.0,
+   "confidence": "medium",
+   "explanation": "Move 1 bus from Route 9M to Route 3, 17:30–19:00. Route 3 is forecast at 117% of capacity near Maduvankarai (P90); Route 9M is at 33%. Expected effect: average wait on 3 falls from 3.7 to 3.5 minutes and peak load from 117% to 111%; 9M keeps its 20-minute minimum frequency (wait 6.9 to 8.3 minutes). Extra empty travel: 0 km. Confidence: medium.",
+   "status": "pending",
+   "solver": "cp_sat"
+  },
+  {
+   "id": "rec_0002",
+   "created_at": "2026-09-25T17:15:00+05:30",
+   "action": "move_bus",
+   "from_route_id": "5E",
+   "to_route_id": "3",
+   "bus_count": 1,
+   "window_start": "2026-09-25T17:30:00+05:30",
+   "window_end": "2026-09-25T19:00:00+05:30",
+   "trigger_flags": [
+    "overcrowded"
+   ],
+   "expected_effect": {
+    "to_route": {
+     "wait_min_before": 3.7,
+     "wait_min_after": 3.5,
+     "peak_load_before": 1.17,
+     "peak_load_after": 1.11
+    },
+    "from_route": {
+     "wait_min_before": 4.6,
+     "wait_min_after": 4.9,
+     "peak_load_before": 0.57,
+     "peak_load_after": 0.6
+    }
+   },
+   "deadhead_km": 2.2,
+   "confidence": "medium",
+   "explanation": "Move 1 bus from Route 5E to Route 3, 17:30–19:00. Route 3 is forecast at 117% of capacity near Maduvankarai (P90); Route 5E is at 57%. Expected effect: average wait on 3 falls from 3.7 to 3.5 minutes and peak load from 117% to 111%; 5E keeps its 15-minute minimum frequency (wait 4.6 to 4.9 minutes). Extra empty travel: 2.2 km. Confidence: medium.",
    "status": "pending",
    "solver": "cp_sat"
   }

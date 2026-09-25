@@ -6,22 +6,26 @@
     "layover_min": 6,
     "deadhead_speed_kmh": 20,
     "holidays": [
+      "2026-01-15",
+      "2026-01-16",
+      "2026-01-17",
       "2026-01-26",
-      "2026-03-04",
       "2026-03-21",
       "2026-04-03",
+      "2026-04-14",
       "2026-05-01",
       "2026-08-15",
       "2026-09-04",
+      "2026-09-14",
       "2026-10-02",
+      "2026-10-19",
       "2026-10-20",
       "2026-11-08",
-      "2026-11-24",
       "2026-12-25"
     ]
   },
   "demand": {
-    "pax_per_bus_day": 600,
+    "pax_per_bus_day": 1000,
     "stop_type_weight": {
       "hub": 3.0,
       "commercial": 2.0,
@@ -137,33 +141,33 @@
         "breakdowns": []
       },
       "event_surge": {
-        "label": "Event surge at Nehru Place",
+        "label": "Event surge at Guindy",
         "date": "2026-09-25",
         "rain_mm": 0.0,
         "temp_c": 30.0,
         "events": [
           {
             "stops": [
-              "stop_1021",
-              "stop_1008",
-              "stop_1006"
+              "1465",
+              "1048",
+              "5766"
             ],
             "start": "17:15",
             "end": "19:00",
-            "factor": 2.6
+            "factor": 2.5
           }
         ],
         "breakdowns": []
       },
       "breakdown": {
-        "label": "Bus breakdown on Route 534",
+        "label": "Bus breakdown on Route 3",
         "date": "2026-09-22",
         "rain_mm": 0.0,
         "temp_c": 31.0,
         "events": [],
         "breakdowns": [
           {
-            "route_id": "534",
+            "route_id": "3",
             "at": "17:10"
           }
         ]

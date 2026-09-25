@@ -1,456 +1,1446 @@
 [
  {
-  "id": "423",
-  "name": "423 Lajpat Nagar – Badarpur Border",
-  "depot_id": "depot_okhla",
-  "color": "#17BEBB",
-  "min_headway_min": 20.0,
+  "id": "3",
+  "name": "3 T. Nagar – Thiruvanmiyur",
+  "depot_id": "depot_tnagar",
+  "color": "#E4572E",
+  "min_headway_min": 12.0,
   "shape": {
    "type": "LineString",
    "coordinates": [
     [
-     77.2433,
-     28.5677
+     80.23001,
+     13.03467
     ],
     [
-     77.2585,
-     28.572
+     80.23086,
+     13.02989
     ],
     [
-     77.2588,
-     28.55
+     80.23143,
+     13.02601
     ],
     [
-     77.264,
-     28.539
+     80.22976,
+     13.02515
     ],
     [
-     77.271,
-     28.53
+     80.2282,
+     13.02377
     ],
     [
-     77.283,
-     28.538
+     80.22699,
+     13.02267
     ],
     [
-     77.289,
-     28.531
+     80.22568,
+     13.02114
     ],
     [
-     77.303,
-     28.495
+     80.22658,
+     13.01364
+    ],
+    [
+     80.22519,
+     13.01056
+    ],
+    [
+     80.22195,
+     13.01186
+    ],
+    [
+     80.21334,
+     13.00824
+    ],
+    [
+     80.21229,
+     13.00459
+    ],
+    [
+     80.21442,
+     12.99957
+    ],
+    [
+     80.22025,
+     12.9908
+    ],
+    [
+     80.22308,
+     12.98771
+    ],
+    [
+     80.22331,
+     12.98541
+    ],
+    [
+     80.22124,
+     12.97617
+    ],
+    [
+     80.22521,
+     12.97853
+    ],
+    [
+     80.23043,
+     12.98173
+    ],
+    [
+     80.23349,
+     12.98171
+    ],
+    [
+     80.23858,
+     12.9814
+    ],
+    [
+     80.2427,
+     12.98143
+    ],
+    [
+     80.25155,
+     12.9803
+    ],
+    [
+     80.25238,
+     12.9881
+    ],
+    [
+     80.25624,
+     12.98768
+    ],
+    [
+     80.25929,
+     12.98695
     ]
    ]
   },
   "stops": [
    {
-    "id": "stop_1006",
-    "name": "Lajpat Nagar",
-    "lat": 28.5677,
-    "lon": 77.2433,
+    "id": "5823",
+    "name": "Thiyagarayanagar Terminus",
+    "lat": 13.03467,
+    "lon": 80.23001,
     "seq": 0
    },
    {
-    "id": "stop_1005",
-    "name": "Ashram",
-    "lat": 28.572,
-    "lon": 77.2585,
+    "id": "31",
+    "name": "Cit Nagar",
+    "lat": 13.02989,
+    "lon": 80.23086,
     "seq": 1
    },
    {
-    "id": "stop_1010",
-    "name": "Kalkaji Mandir",
-    "lat": 28.55,
-    "lon": 77.2588,
+    "id": "9187",
+    "name": "Munipillai Chathiram",
+    "lat": 13.02601,
+    "lon": 80.23143,
     "seq": 2
    },
    {
-    "id": "stop_1011",
-    "name": "Govindpuri",
-    "lat": 28.539,
-    "lon": 77.264,
+    "id": "10196",
+    "name": "Saidapet Veterinary Hospital Or Raja Hostel",
+    "lat": 13.02515,
+    "lon": 80.22976,
     "seq": 3
    },
    {
-    "id": "stop_1012",
-    "name": "Okhla Industrial Area",
-    "lat": 28.53,
-    "lon": 77.271,
+    "id": "5784",
+    "name": "Saidapet Metro",
+    "lat": 13.02377,
+    "lon": 80.2282,
     "seq": 4
    },
    {
-    "id": "stop_1013",
-    "name": "Jasola",
-    "lat": 28.538,
-    "lon": 77.283,
+    "id": "9164",
+    "name": "Saidapet",
+    "lat": 13.02267,
+    "lon": 80.22699,
     "seq": 5
    },
    {
-    "id": "stop_1014",
-    "name": "Sarita Vihar",
-    "lat": 28.531,
-    "lon": 77.289,
+    "id": "5607",
+    "name": "Tamil Nadu Open University Or Panagal Maligai",
+    "lat": 13.02114,
+    "lon": 80.22568,
     "seq": 6
    },
    {
-    "id": "stop_1015",
-    "name": "Badarpur Border",
-    "lat": 28.495,
-    "lon": 77.303,
+    "id": "5785",
+    "name": "Chinnamalai Or Saidapet Court",
+    "lat": 13.01364,
+    "lon": 80.22658,
     "seq": 7
+   },
+   {
+    "id": "5764",
+    "name": "Raj Bhavan Quarters",
+    "lat": 13.01056,
+    "lon": 80.22519,
+    "seq": 8
+   },
+   {
+    "id": "1048",
+    "name": "Concorde Or Chellammal College",
+    "lat": 13.01186,
+    "lon": 80.22195,
+    "seq": 9
+   },
+   {
+    "id": "1465",
+    "name": "Guindy Railway Station",
+    "lat": 13.00824,
+    "lon": 80.21334,
+    "seq": 10
+   },
+   {
+    "id": "5766",
+    "name": "Maduvankarai",
+    "lat": 13.00459,
+    "lon": 80.21229,
+    "seq": 11
+   },
+   {
+    "id": "10161",
+    "name": "Guindy Padavettamman Kovil",
+    "lat": 12.99957,
+    "lon": 80.21442,
+    "seq": 12
+   },
+   {
+    "id": "8847",
+    "name": "Guru Nanak College",
+    "lat": 12.9908,
+    "lon": 80.22025,
+    "seq": 13
+   },
+   {
+    "id": "8813",
+    "name": "Gandhi Road",
+    "lat": 12.98771,
+    "lon": 80.22308,
+    "seq": 14
+   },
+   {
+    "id": "8777",
+    "name": "Dhandeeswaran Nagar",
+    "lat": 12.98541,
+    "lon": 80.22331,
+    "seq": 15
+   },
+   {
+    "id": "8660",
+    "name": "Velachery",
+    "lat": 12.97617,
+    "lon": 80.22124,
+    "seq": 16
+   },
+   {
+    "id": "8689",
+    "name": "Tansi Nagar",
+    "lat": 12.97853,
+    "lon": 80.22521,
+    "seq": 17
+   },
+   {
+    "id": "8736",
+    "name": "Baby Nagar",
+    "lat": 12.98173,
+    "lon": 80.23043,
+    "seq": 18
+   },
+   {
+    "id": "8734",
+    "name": "Bharathi Nagar",
+    "lat": 12.98171,
+    "lon": 80.23349,
+    "seq": 19
+   },
+   {
+    "id": "8728",
+    "name": "Pillaiyar Kovil",
+    "lat": 12.9814,
+    "lon": 80.23858,
+    "seq": 20
+   },
+   {
+    "id": "10133",
+    "name": "Tharamani Or Irtc Junction",
+    "lat": 12.98143,
+    "lon": 80.2427,
+    "seq": 21
+   },
+   {
+    "id": "8711",
+    "name": "Srp Tools",
+    "lat": 12.9803,
+    "lon": 80.25155,
+    "seq": 22
+   },
+   {
+    "id": "8820",
+    "name": "Tidel Park",
+    "lat": 12.9881,
+    "lon": 80.25238,
+    "seq": 23
+   },
+   {
+    "id": "10815",
+    "name": "Jayanthi Theatre",
+    "lat": 12.98768,
+    "lon": 80.25624,
+    "seq": 24
+   },
+   {
+    "id": "5908",
+    "name": "Thiruvanmiyur Bus Stand",
+    "lat": 12.98695,
+    "lon": 80.25929,
+    "seq": 25
    }
   ]
  },
  {
-  "id": "511",
-  "name": "511 AIIMS – Saket",
-  "depot_id": "depot_kalkaji",
+  "id": "5E",
+  "name": "5E Vadapalani – Besant Nagar",
+  "depot_id": "depot_tnagar",
   "color": "#FFC914",
   "min_headway_min": 15.0,
   "shape": {
    "type": "LineString",
    "coordinates": [
     [
-     77.21,
-     28.5672
+     80.20705,
+     13.04919
     ],
     [
-     77.232,
-     28.574
+     80.21242,
+     13.04634
     ],
     [
-     77.2347,
-     28.5645
+     80.20896,
+     13.0441
     ],
     [
-     77.238,
-     28.548
+     80.2052,
+     13.04101
     ],
     [
-     77.227,
-     28.538
+     80.20495,
+     13.03928
     ],
     [
-     77.2066,
-     28.5245
+     80.2015,
+     13.03857
+    ],
+    [
+     80.19953,
+     13.03886
+    ],
+    [
+     80.19715,
+     13.03924
+    ],
+    [
+     80.1933,
+     13.03979
+    ],
+    [
+     80.19293,
+     13.03884
+    ],
+    [
+     80.19284,
+     13.03811
+    ],
+    [
+     80.19597,
+     13.03728
+    ],
+    [
+     80.19854,
+     13.03685
+    ],
+    [
+     80.20159,
+     13.03632
+    ],
+    [
+     80.20545,
+     13.03586
+    ],
+    [
+     80.20838,
+     13.0355
+    ],
+    [
+     80.21088,
+     13.03513
+    ],
+    [
+     80.21209,
+     13.03354
+    ],
+    [
+     80.20959,
+     13.03161
+    ],
+    [
+     80.20921,
+     13.03018
+    ],
+    [
+     80.21441,
+     13.03043
+    ],
+    [
+     80.21681,
+     13.03049
+    ],
+    [
+     80.22021,
+     13.03226
+    ],
+    [
+     80.22368,
+     13.03119
+    ],
+    [
+     80.22409,
+     13.02871
+    ],
+    [
+     80.22708,
+     13.02868
+    ],
+    [
+     80.2281,
+     13.03042
+    ],
+    [
+     80.23086,
+     13.02989
+    ],
+    [
+     80.22976,
+     13.02515
+    ],
+    [
+     80.2282,
+     13.02377
+    ],
+    [
+     80.22568,
+     13.02114
+    ],
+    [
+     80.22658,
+     13.01364
+    ],
+    [
+     80.23346,
+     13.00829
+    ],
+    [
+     80.24097,
+     13.0068
+    ],
+    [
+     80.24674,
+     13.00682
+    ],
+    [
+     80.24946,
+     13.00682
+    ],
+    [
+     80.2532,
+     13.00667
+    ],
+    [
+     80.25756,
+     13.00639
+    ],
+    [
+     80.26607,
+     13.00033
     ]
    ]
   },
   "stops": [
    {
-    "id": "stop_1017",
-    "name": "AIIMS",
-    "lat": 28.5672,
-    "lon": 77.21,
+    "id": "4942",
+    "name": "Vadapalani Bus Stand",
+    "lat": 13.04919,
+    "lon": 80.20705,
     "seq": 0
    },
    {
-    "id": "stop_1018",
-    "name": "Defence Colony",
-    "lat": 28.574,
-    "lon": 77.232,
+    "id": "4940",
+    "name": "Vadapalani",
+    "lat": 13.04634,
+    "lon": 80.21242,
     "seq": 1
    },
    {
-    "id": "stop_1007",
-    "name": "Moolchand",
-    "lat": 28.5645,
-    "lon": 77.2347,
+    "id": "90",
+    "name": "Nagathamman Koil",
+    "lat": 13.0441,
+    "lon": 80.20896,
     "seq": 2
    },
    {
-    "id": "stop_1008",
-    "name": "Greater Kailash",
-    "lat": 28.548,
-    "lon": 77.238,
+    "id": "127",
+    "name": "Sivan Park",
+    "lat": 13.04101,
+    "lon": 80.2052,
     "seq": 3
    },
    {
-    "id": "stop_1019",
-    "name": "Chirag Delhi",
-    "lat": 28.538,
-    "lon": 77.227,
+    "id": "112",
+    "name": "Pt Rajan Road",
+    "lat": 13.03928,
+    "lon": 80.20495,
     "seq": 4
    },
    {
-    "id": "stop_1020",
-    "name": "Saket",
-    "lat": 28.5245,
-    "lon": 77.2066,
-    "seq": 5
-   }
-  ]
- },
- {
-  "id": "534",
-  "name": "534 Anand Vihar ISBT – Nehru Place",
-  "depot_id": "depot_okhla",
-  "color": "#E4572E",
-  "min_headway_min": 15.0,
-  "shape": {
-   "type": "LineString",
-   "coordinates": [
-    [
-     77.3159,
-     28.6468
-    ],
-    [
-     77.2944,
-     28.604
-    ],
-    [
-     77.2773,
-     28.6127
-    ],
-    [
-     77.2507,
-     28.5893
-    ],
-    [
-     77.2585,
-     28.572
-    ],
-    [
-     77.2433,
-     28.5677
-    ],
-    [
-     77.2347,
-     28.5645
-    ],
-    [
-     77.238,
-     28.548
-    ],
-    [
-     77.2517,
-     28.5494
-    ]
-   ]
-  },
-  "stops": [
-   {
-    "id": "stop_1001",
-    "name": "Anand Vihar ISBT",
-    "lat": 28.6468,
-    "lon": 77.3159,
-    "seq": 0
-   },
-   {
-    "id": "stop_1002",
-    "name": "Mayur Vihar Phase 1",
-    "lat": 28.604,
-    "lon": 77.2944,
-    "seq": 1
-   },
-   {
-    "id": "stop_1003",
-    "name": "Akshardham",
-    "lat": 28.6127,
-    "lon": 77.2773,
-    "seq": 2
-   },
-   {
-    "id": "stop_1004",
-    "name": "Nizamuddin",
-    "lat": 28.5893,
-    "lon": 77.2507,
-    "seq": 3
-   },
-   {
-    "id": "stop_1005",
-    "name": "Ashram",
-    "lat": 28.572,
-    "lon": 77.2585,
-    "seq": 4
-   },
-   {
-    "id": "stop_1006",
-    "name": "Lajpat Nagar",
-    "lat": 28.5677,
-    "lon": 77.2433,
+    "id": "44",
+    "name": "Double Tank",
+    "lat": 13.03857,
+    "lon": 80.2015,
     "seq": 5
    },
    {
-    "id": "stop_1007",
-    "name": "Moolchand",
-    "lat": 28.5645,
-    "lon": 77.2347,
+    "id": "98",
+    "name": "Padma Shri School",
+    "lat": 13.03886,
+    "lon": 80.19953,
     "seq": 6
    },
    {
-    "id": "stop_1008",
-    "name": "Greater Kailash",
-    "lat": 28.548,
-    "lon": 77.238,
+    "id": "27",
+    "name": "Ayappan Kovil",
+    "lat": 13.03924,
+    "lon": 80.19715,
     "seq": 7
    },
    {
-    "id": "stop_1021",
-    "name": "Nehru Place",
-    "lat": 28.5494,
-    "lon": 77.2517,
+    "id": "21",
+    "name": "Amudam",
+    "lat": 13.03979,
+    "lon": 80.1933,
     "seq": 8
+   },
+   {
+    "id": "85",
+    "name": "Munusamy Salai",
+    "lat": 13.03884,
+    "lon": 80.19293,
+    "seq": 9
+   },
+   {
+    "id": "94",
+    "name": "Nesapakkam",
+    "lat": 13.03811,
+    "lon": 80.19284,
+    "seq": 10
+   },
+   {
+    "id": "70",
+    "name": "M G R Nagar",
+    "lat": 13.03728,
+    "lon": 80.19597,
+    "seq": 11
+   },
+   {
+    "id": "41",
+    "name": "Data Udupi Hotel",
+    "lat": 13.03685,
+    "lon": 80.19854,
+    "seq": 12
+   },
+   {
+    "id": "71",
+    "name": "M G R Nagar Market",
+    "lat": 13.03632,
+    "lon": 80.20159,
+    "seq": 13
+   },
+   {
+    "id": "4",
+    "name": "K.K.Nagar",
+    "lat": 13.03586,
+    "lon": 80.20545,
+    "seq": 14
+   },
+   {
+    "id": "48",
+    "name": "K.K.Nagar E.S.I Hospital",
+    "lat": 13.0355,
+    "lon": 80.20838,
+    "seq": 15
+   },
+   {
+    "id": "25",
+    "name": "Ashok Pillar",
+    "lat": 13.03513,
+    "lon": 80.21088,
+    "seq": 16
+   },
+   {
+    "id": "26",
+    "name": "Ashok Pillar",
+    "lat": 13.03354,
+    "lon": 80.21209,
+    "seq": 17
+   },
+   {
+    "id": "9236",
+    "name": "Kk Nagar Telephone Exchange Jaffarkhanpet",
+    "lat": 13.03161,
+    "lon": 80.20959,
+    "seq": 18
+   },
+   {
+    "id": "9217",
+    "name": "Kasi Theatre",
+    "lat": 13.03018,
+    "lon": 80.20921,
+    "seq": 19
+   },
+   {
+    "id": "9219",
+    "name": "Ragava Nagar",
+    "lat": 13.03043,
+    "lon": 80.21441,
+    "seq": 20
+   },
+   {
+    "id": "10205",
+    "name": "R.R Colony",
+    "lat": 13.03049,
+    "lon": 80.21681,
+    "seq": 21
+   },
+   {
+    "id": "80",
+    "name": "Mettupalayam",
+    "lat": 13.03226,
+    "lon": 80.22021,
+    "seq": 22
+   },
+   {
+    "id": "131",
+    "name": "Srinivasa Theater",
+    "lat": 13.03119,
+    "lon": 80.22368,
+    "seq": 23
+   },
+   {
+    "id": "24",
+    "name": "Aranganathan Subway",
+    "lat": 13.02871,
+    "lon": 80.22409,
+    "seq": 24
+   },
+   {
+    "id": "61",
+    "name": "Kaveri Nager",
+    "lat": 13.02868,
+    "lon": 80.22708,
+    "seq": 25
+   },
+   {
+    "id": "59",
+    "name": "Kannammapettai Burial Ground",
+    "lat": 13.03042,
+    "lon": 80.2281,
+    "seq": 26
+   },
+   {
+    "id": "31",
+    "name": "Cit Nagar",
+    "lat": 13.02989,
+    "lon": 80.23086,
+    "seq": 27
+   },
+   {
+    "id": "10196",
+    "name": "Saidapet Veterinary Hospital Or Raja Hostel",
+    "lat": 13.02515,
+    "lon": 80.22976,
+    "seq": 28
+   },
+   {
+    "id": "5784",
+    "name": "Saidapet Metro",
+    "lat": 13.02377,
+    "lon": 80.2282,
+    "seq": 29
+   },
+   {
+    "id": "5607",
+    "name": "Tamil Nadu Open University Or Panagal Maligai",
+    "lat": 13.02114,
+    "lon": 80.22568,
+    "seq": 30
+   },
+   {
+    "id": "5785",
+    "name": "Chinnamalai Or Saidapet Court",
+    "lat": 13.01364,
+    "lon": 80.22658,
+    "seq": 31
+   },
+   {
+    "id": "502",
+    "name": "Anna University",
+    "lat": 13.00829,
+    "lon": 80.23346,
+    "seq": 32
+   },
+   {
+    "id": "5687",
+    "name": "Iit Madras Or Guindy National Park",
+    "lat": 13.0068,
+    "lon": 80.24097,
+    "seq": 33
+   },
+   {
+    "id": "5750",
+    "name": "Madhya Kailash",
+    "lat": 13.00682,
+    "lon": 80.24674,
+    "seq": 34
+   },
+   {
+    "id": "5751",
+    "name": "Adyar Gandhi Nagar",
+    "lat": 13.00682,
+    "lon": 80.24946,
+    "seq": 35
+   },
+   {
+    "id": "5804",
+    "name": "Adyar Old Depot",
+    "lat": 13.00667,
+    "lon": 80.2532,
+    "seq": 36
+   },
+   {
+    "id": "8993",
+    "name": "Adyar Signal",
+    "lat": 13.00639,
+    "lon": 80.25756,
+    "seq": 37
+   },
+   {
+    "id": "8953",
+    "name": "Besant Nagar Terminus",
+    "lat": 13.00033,
+    "lon": 80.26607,
+    "seq": 38
    }
   ]
  },
  {
-  "id": "604",
-  "name": "604 Nehru Place – Badarpur Border",
-  "depot_id": "depot_kalkaji",
+  "id": "78",
+  "name": "78 Koyambedu – Thiruvanmiyur",
+  "depot_id": "depot_adyar",
   "color": "#76B041",
   "min_headway_min": 20.0,
   "shape": {
    "type": "LineString",
    "coordinates": [
     [
-     77.2517,
-     28.5494
+     80.2052,
+     13.0688
     ],
     [
-     77.2588,
-     28.55
+     80.21125,
+     13.06518
     ],
     [
-     77.264,
-     28.539
+     80.21166,
+     13.05791
     ],
     [
-     77.273,
-     28.5025
+     80.21242,
+     13.04634
     ],
     [
-     77.303,
-     28.495
+     80.21257,
+     13.04019
+    ],
+    [
+     80.21209,
+     13.03354
+    ],
+    [
+     80.20888,
+     13.0292
+    ],
+    [
+     80.20703,
+     13.02456
+    ],
+    [
+     80.20623,
+     13.01874
+    ],
+    [
+     80.20477,
+     13.0146
+    ],
+    [
+     80.21128,
+     13.00928
+    ],
+    [
+     80.22034,
+     13.01215
+    ],
+    [
+     80.22658,
+     13.01364
+    ],
+    [
+     80.23346,
+     13.00829
+    ],
+    [
+     80.24097,
+     13.0068
+    ],
+    [
+     80.24674,
+     13.00682
+    ],
+    [
+     80.24946,
+     13.00682
+    ],
+    [
+     80.2532,
+     13.00667
+    ],
+    [
+     80.25686,
+     13.0067
+    ],
+    [
+     80.25648,
+     13.00075
+    ],
+    [
+     80.25602,
+     12.98892
+    ],
+    [
+     80.25929,
+     12.98695
     ]
    ]
   },
   "stops": [
    {
-    "id": "stop_1021",
-    "name": "Nehru Place",
-    "lat": 28.5494,
-    "lon": 77.2517,
+    "id": "5822",
+    "name": "M.G.R.Koyambedu Bus Terminus",
+    "lat": 13.0688,
+    "lon": 80.2052,
     "seq": 0
    },
    {
-    "id": "stop_1010",
-    "name": "Kalkaji Mandir",
-    "lat": 28.55,
-    "lon": 77.2588,
+    "id": "2820",
+    "name": "Mmda Colony Road Junction",
+    "lat": 13.06518,
+    "lon": 80.21125,
     "seq": 1
    },
    {
-    "id": "stop_1011",
-    "name": "Govindpuri",
-    "lat": 28.539,
-    "lon": 77.264,
+    "id": "4712",
+    "name": "Vadapalani Thiru Nagar",
+    "lat": 13.05791,
+    "lon": 80.21166,
     "seq": 2
    },
    {
-    "id": "stop_1016",
-    "name": "Tughlakabad",
-    "lat": 28.5025,
-    "lon": 77.273,
+    "id": "4940",
+    "name": "Vadapalani",
+    "lat": 13.04634,
+    "lon": 80.21242,
     "seq": 3
    },
    {
-    "id": "stop_1015",
-    "name": "Badarpur Border",
-    "lat": 28.495,
-    "lon": 77.303,
+    "id": "9343",
+    "name": "Ashok Nagar Canara Bank",
+    "lat": 13.04019,
+    "lon": 80.21257,
     "seq": 4
+   },
+   {
+    "id": "26",
+    "name": "Ashok Pillar",
+    "lat": 13.03354,
+    "lon": 80.21209,
+    "seq": 5
+   },
+   {
+    "id": "9209",
+    "name": "Kasi Theatre",
+    "lat": 13.0292,
+    "lon": 80.20888,
+    "seq": 6
+   },
+   {
+    "id": "9176",
+    "name": "Kalaimagal Nagar",
+    "lat": 13.02456,
+    "lon": 80.20703,
+    "seq": 7
+   },
+   {
+    "id": "10190",
+    "name": "Ekkattuthangal Or Ambal Nagar",
+    "lat": 13.01874,
+    "lon": 80.20623,
+    "seq": 8
+   },
+   {
+    "id": "9057",
+    "name": "Cipet",
+    "lat": 13.0146,
+    "lon": 80.20477,
+    "seq": 9
+   },
+   {
+    "id": "1461",
+    "name": "Guindy Bus Terminus",
+    "lat": 13.00928,
+    "lon": 80.21128,
+    "seq": 10
+   },
+   {
+    "id": "908",
+    "name": "Chellammal College",
+    "lat": 13.01215,
+    "lon": 80.22034,
+    "seq": 11
+   },
+   {
+    "id": "5785",
+    "name": "Chinnamalai Or Saidapet Court",
+    "lat": 13.01364,
+    "lon": 80.22658,
+    "seq": 12
+   },
+   {
+    "id": "502",
+    "name": "Anna University",
+    "lat": 13.00829,
+    "lon": 80.23346,
+    "seq": 13
+   },
+   {
+    "id": "5687",
+    "name": "Iit Madras Or Guindy National Park",
+    "lat": 13.0068,
+    "lon": 80.24097,
+    "seq": 14
+   },
+   {
+    "id": "5750",
+    "name": "Madhya Kailash",
+    "lat": 13.00682,
+    "lon": 80.24674,
+    "seq": 15
+   },
+   {
+    "id": "5751",
+    "name": "Adyar Gandhi Nagar",
+    "lat": 13.00682,
+    "lon": 80.24946,
+    "seq": 16
+   },
+   {
+    "id": "5804",
+    "name": "Adyar Old Depot",
+    "lat": 13.00667,
+    "lon": 80.2532,
+    "seq": 17
+   },
+   {
+    "id": "10980",
+    "name": "Adyar Signal Bus Stop",
+    "lat": 13.0067,
+    "lon": 80.25686,
+    "seq": 18
+   },
+   {
+    "id": "5912",
+    "name": "Bsnl Telephone Exchange",
+    "lat": 13.00075,
+    "lon": 80.25648,
+    "seq": 19
+   },
+   {
+    "id": "5914",
+    "name": "Jayanthi Theatre",
+    "lat": 12.98892,
+    "lon": 80.25602,
+    "seq": 20
+   },
+   {
+    "id": "5908",
+    "name": "Thiruvanmiyur Bus Stand",
+    "lat": 12.98695,
+    "lon": 80.25929,
+    "seq": 21
    }
   ]
  },
  {
-  "id": "717",
-  "name": "717 Kalindi Kunj – Nehru Place",
-  "depot_id": "depot_okhla",
-  "color": "#8E6C8A",
+  "id": "9M",
+  "name": "9M T. Nagar – AGS Colony",
+  "depot_id": "depot_tnagar",
+  "color": "#17BEBB",
   "min_headway_min": 20.0,
   "shape": {
    "type": "LineString",
    "coordinates": [
     [
-     77.31,
-     28.544
+     80.23001,
+     13.03467
     ],
     [
-     77.283,
-     28.538
+     80.23086,
+     13.02989
     ],
     [
-     77.289,
-     28.531
+     80.22976,
+     13.02515
     ],
     [
-     77.271,
-     28.53
+     80.2282,
+     13.02377
     ],
     [
-     77.264,
-     28.539
+     80.22568,
+     13.02114
     ],
     [
-     77.2588,
-     28.55
+     80.22658,
+     13.01364
     ],
     [
-     77.2517,
-     28.5494
+     80.22519,
+     13.01056
+    ],
+    [
+     80.22195,
+     13.01186
+    ],
+    [
+     80.21334,
+     13.00824
+    ],
+    [
+     80.21229,
+     13.00459
+    ],
+    [
+     80.20727,
+     12.99817
+    ],
+    [
+     80.20659,
+     12.9947
+    ],
+    [
+     80.20496,
+     12.9892
+    ],
+    [
+     80.20545,
+     12.98743
+    ],
+    [
+     80.20495,
+     12.98454
+    ],
+    [
+     80.20708,
+     12.98327
+    ],
+    [
+     80.20672,
+     12.98146
+    ],
+    [
+     80.20755,
+     12.9808
+    ],
+    [
+     80.20729,
+     12.97914
+    ],
+    [
+     80.20948,
+     12.97795
     ]
    ]
   },
   "stops": [
    {
-    "id": "stop_1022",
-    "name": "Kalindi Kunj",
-    "lat": 28.544,
-    "lon": 77.31,
+    "id": "5823",
+    "name": "Thiyagarayanagar Terminus",
+    "lat": 13.03467,
+    "lon": 80.23001,
     "seq": 0
    },
    {
-    "id": "stop_1013",
-    "name": "Jasola",
-    "lat": 28.538,
-    "lon": 77.283,
+    "id": "31",
+    "name": "Cit Nagar",
+    "lat": 13.02989,
+    "lon": 80.23086,
     "seq": 1
    },
    {
-    "id": "stop_1014",
-    "name": "Sarita Vihar",
-    "lat": 28.531,
-    "lon": 77.289,
+    "id": "10196",
+    "name": "Saidapet Veterinary Hospital Or Raja Hostel",
+    "lat": 13.02515,
+    "lon": 80.22976,
     "seq": 2
    },
    {
-    "id": "stop_1012",
-    "name": "Okhla Industrial Area",
-    "lat": 28.53,
-    "lon": 77.271,
+    "id": "5784",
+    "name": "Saidapet Metro",
+    "lat": 13.02377,
+    "lon": 80.2282,
     "seq": 3
    },
    {
-    "id": "stop_1011",
-    "name": "Govindpuri",
-    "lat": 28.539,
-    "lon": 77.264,
+    "id": "5607",
+    "name": "Tamil Nadu Open University Or Panagal Maligai",
+    "lat": 13.02114,
+    "lon": 80.22568,
     "seq": 4
    },
    {
-    "id": "stop_1010",
-    "name": "Kalkaji Mandir",
-    "lat": 28.55,
-    "lon": 77.2588,
+    "id": "5785",
+    "name": "Chinnamalai Or Saidapet Court",
+    "lat": 13.01364,
+    "lon": 80.22658,
     "seq": 5
    },
    {
-    "id": "stop_1021",
-    "name": "Nehru Place",
-    "lat": 28.5494,
-    "lon": 77.2517,
+    "id": "5764",
+    "name": "Raj Bhavan Quarters",
+    "lat": 13.01056,
+    "lon": 80.22519,
     "seq": 6
+   },
+   {
+    "id": "1048",
+    "name": "Concorde Or Chellammal College",
+    "lat": 13.01186,
+    "lon": 80.22195,
+    "seq": 7
+   },
+   {
+    "id": "1465",
+    "name": "Guindy Railway Station",
+    "lat": 13.00824,
+    "lon": 80.21334,
+    "seq": 8
+   },
+   {
+    "id": "5766",
+    "name": "Maduvankarai",
+    "lat": 13.00459,
+    "lon": 80.21229,
+    "seq": 9
+   },
+   {
+    "id": "8942",
+    "name": "Ngo Colony",
+    "lat": 12.99817,
+    "lon": 80.20727,
+    "seq": 10
+   },
+   {
+    "id": "8890",
+    "name": "Adambakkam Depot",
+    "lat": 12.9947,
+    "lon": 80.20659,
+    "seq": 11
+   },
+   {
+    "id": "8824",
+    "name": "Kakkan Bridge",
+    "lat": 12.9892,
+    "lon": 80.20496,
+    "seq": 12
+   },
+   {
+    "id": "8806",
+    "name": "Adambakkam Brindavan Nagar",
+    "lat": 12.98743,
+    "lon": 80.20545,
+    "seq": 13
+   },
+   {
+    "id": "8767",
+    "name": "Adambakkam Pillayar Temple Stop",
+    "lat": 12.98454,
+    "lon": 80.20495,
+    "seq": 14
+   },
+   {
+    "id": "10139",
+    "name": "Adambakkam Annai Stores",
+    "lat": 12.98327,
+    "lon": 80.20708,
+    "seq": 15
+   },
+   {
+    "id": "10788",
+    "name": "Adambakkam A.G.S.Officer'S Colony",
+    "lat": 12.98146,
+    "lon": 80.20672,
+    "seq": 16
+   },
+   {
+    "id": "8721",
+    "name": "Adambakkam Bhuwaneshwari Temple",
+    "lat": 12.9808,
+    "lon": 80.20755,
+    "seq": 17
+   },
+   {
+    "id": "8696",
+    "name": "Adambakkam Saraswathi Nagar",
+    "lat": 12.97914,
+    "lon": 80.20729,
+    "seq": 18
+   },
+   {
+    "id": "10786",
+    "name": "Adambakkam A.G.S.Officer'S Colony-2",
+    "lat": 12.97795,
+    "lon": 80.20948,
+    "seq": 19
+   }
+  ]
+ },
+ {
+  "id": "S13",
+  "name": "S13 Velachery – Guindy",
+  "depot_id": "depot_adyar",
+  "color": "#8E6C8A",
+  "min_headway_min": 30.0,
+  "shape": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     80.22087,
+     12.97583
+    ],
+    [
+     80.21359,
+     12.97249
+    ],
+    [
+     80.21309,
+     12.97386
+    ],
+    [
+     80.21233,
+     12.97597
+    ],
+    [
+     80.21001,
+     12.97781
+    ],
+    [
+     80.20947,
+     12.97796
+    ],
+    [
+     80.20727,
+     12.97928
+    ],
+    [
+     80.20755,
+     12.98078
+    ],
+    [
+     80.20664,
+     12.9814
+    ],
+    [
+     80.20687,
+     12.98314
+    ],
+    [
+     80.20492,
+     12.98455
+    ],
+    [
+     80.20531,
+     12.98741
+    ],
+    [
+     80.20486,
+     12.98924
+    ],
+    [
+     80.20651,
+     12.99489
+    ],
+    [
+     80.20738,
+     12.99829
+    ],
+    [
+     80.21088,
+     13.00084
+    ],
+    [
+     80.21222,
+     13.0046
+    ],
+    [
+     80.21309,
+     13.00796
+    ]
+   ]
+  },
+  "stops": [
+   {
+    "id": "8651",
+    "name": "Velachery",
+    "lat": 12.97583,
+    "lon": 80.22087,
+    "seq": 0
+   },
+   {
+    "id": "8619",
+    "name": "Ram Nagar",
+    "lat": 12.97249,
+    "lon": 80.21359,
+    "seq": 1
+   },
+   {
+    "id": "8631",
+    "name": "Murugu Nagar",
+    "lat": 12.97386,
+    "lon": 80.21309,
+    "seq": 2
+   },
+   {
+    "id": "8653",
+    "name": "San Academy",
+    "lat": 12.97597,
+    "lon": 80.21233,
+    "seq": 3
+   },
+   {
+    "id": "10129",
+    "name": "A.G.S 4th Cross Street",
+    "lat": 12.97781,
+    "lon": 80.21001,
+    "seq": 4
+   },
+   {
+    "id": "10785",
+    "name": "Adambakkam A.G.S.Officer'S Colony",
+    "lat": 12.97796,
+    "lon": 80.20947,
+    "seq": 5
+   },
+   {
+    "id": "8697",
+    "name": "Adambakkam Saraswathi Nagar",
+    "lat": 12.97928,
+    "lon": 80.20727,
+    "seq": 6
+   },
+   {
+    "id": "8720",
+    "name": "Adambakkam Bhuwaneshwari Temple",
+    "lat": 12.98078,
+    "lon": 80.20755,
+    "seq": 7
+   },
+   {
+    "id": "10787",
+    "name": "Adambakkam A.G.S.Officer'S Colony-1",
+    "lat": 12.9814,
+    "lon": 80.20664,
+    "seq": 8
+   },
+   {
+    "id": "10138",
+    "name": "Adambakkam Annai Stores",
+    "lat": 12.98314,
+    "lon": 80.20687,
+    "seq": 9
+   },
+   {
+    "id": "8768",
+    "name": "Adambakkam Pillayar Temple Stop",
+    "lat": 12.98455,
+    "lon": 80.20492,
+    "seq": 10
+   },
+   {
+    "id": "8803",
+    "name": "Adambakkam Brindavan Nagar",
+    "lat": 12.98741,
+    "lon": 80.20531,
+    "seq": 11
+   },
+   {
+    "id": "8827",
+    "name": "Kakkan Bridge",
+    "lat": 12.98924,
+    "lon": 80.20486,
+    "seq": 12
+   },
+   {
+    "id": "8892",
+    "name": "Adambakkam Depot",
+    "lat": 12.99489,
+    "lon": 80.20651,
+    "seq": 13
+   },
+   {
+    "id": "8940",
+    "name": "Ngo Colony",
+    "lat": 12.99829,
+    "lon": 80.20738,
+    "seq": 14
+   },
+   {
+    "id": "8957",
+    "name": "Maduvankarai Pillayar Kovil",
+    "lat": 13.00084,
+    "lon": 80.21088,
+    "seq": 15
+   },
+   {
+    "id": "8983",
+    "name": "Maduvankarai",
+    "lat": 13.0046,
+    "lon": 80.21222,
+    "seq": 16
+   },
+   {
+    "id": "9005",
+    "name": "Guindy Railway Station",
+    "lat": 13.00796,
+    "lon": 80.21309,
+    "seq": 17
    }
   ]
  }

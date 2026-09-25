@@ -5,7 +5,8 @@
 - routes_config and fleet_config from the GTFS subset in data/artefacts.
 
 Idempotent: existing users get their password reset from the env; existing
-config rows are kept unless reset_config is set. The API runs this in its
+config rows are kept unless reset_config is set; rows for routes or depots no
+longer in the artefacts are removed. The API runs this in its
 start-up thread, so the Render start command does not need a separate
 `python scripts/seed_db.py` process.
 """
@@ -43,6 +44,9 @@ def seed(reset_config: bool = False, net: Network | None = None) -> None:
         if reset_config:
             c.execute(delete(db.routes_config))
             c.execute(delete(db.fleet_config))
+        # Drop config for routes / depots that are no longer in the artefacts (e.g. after a network rebuild).
+        c.execute(delete(db.routes_config).where(db.routes_config.c.route_id.not_in(list(net.routes))))
+        c.execute(delete(db.fleet_config).where(db.fleet_config.c.depot_id.not_in(list(net.depots))))
         have_routes = {r[0] for r in c.execute(select(db.routes_config.c.route_id))}
         for rid, r in net.routes.items():
             if rid in have_routes:

@@ -10,8 +10,8 @@ const rec: Recommendation = {
   id: "rec_0017",
   created_at: "2026-09-25T17:15:00+05:30",
   action: "move_bus",
-  from_route_id: "423",
-  to_route_id: "534",
+  from_route_id: "9M",
+  to_route_id: "3",
   bus_count: 2,
   window_start: "2026-09-25T17:30:00+05:30",
   window_end: "2026-09-25T19:00:00+05:30",
@@ -22,7 +22,7 @@ const rec: Recommendation = {
   },
   deadhead_km: 6,
   confidence: "high",
-  explanation: "Move 2 buses from Route 423 to Route 534, 17:30–19:00.",
+  explanation: "Move 2 buses from Route 9M to Route 3, 17:30–19:00.",
   status: "pending",
   solver: "cp_sat",
 };
@@ -44,7 +44,7 @@ describe("RecommendationCard", () => {
   it("shows the explanation and before/after numbers", () => {
     mockFetch(() => jsonResponse(200, []));
     setup();
-    expect(screen.getByText(/Move 2 buses from Route 423/)).toBeInTheDocument();
+    expect(screen.getByText(/Move 2 buses from Route 9M/)).toBeInTheDocument();
     const cell = (re: RegExp) => screen.getByText((_, el) => el?.tagName === "TD" && re.test(el.textContent ?? ""));
     expect(cell(/125%\s*→\s*92%/)).toBeInTheDocument();
     expect(cell(/11\.0\s*→\s*7\.0\s*min/)).toBeInTheDocument();

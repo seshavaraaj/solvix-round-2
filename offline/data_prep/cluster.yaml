@@ -1,11 +1,14 @@
-# Demo route cluster (solution2 §13 Q1): 5 South/East Delhi routes that share
-# the Ashram – Nehru Place – Okhla corridor and 2 depots.
+# Demo route cluster (solution2 §13 Q1): 5 real Chennai MTC routes that share
+# the T. Nagar – Saidapet – Guindy – Adyar corridor, and 2 depots.
 #
-# This file is the stand-in for the Delhi OTD static GTFS until the real feed
-# is downloaded. Stop coordinates are approximate (WGS84). Route numbers and
-# names follow the contract examples. When the real GTFS zip is available,
-# run gtfs_subset.py instead of build_network.py; both write the same Parquet
-# schema to data/artefacts/gtfs/.
+# Stops, stop order and route numbers come from the community Chennai GTFS
+# (gtfs_subset.py downloads it). Headways, busy factors, depots and stop types
+# are not in the feed; they are set here from the feed's daily trip counts
+# and local knowledge.
+
+gtfs:
+  url: https://raw.githubusercontent.com/ungalsoththu/ChennaiGTFS/main/data/chennai-unified-gtfs.zip
+  source: "UngalSoththu, ChennaiGTFS (ODbL), feed version 2025.03.25"
 
 timezone: Asia/Kolkata
 capacity_rated: 60      # passengers at load factor 1.0
@@ -14,72 +17,88 @@ layover_min: 6          # terminal layover per trip end
 deadhead_speed_kmh: 20
 
 depots:
-  - {id: depot_okhla,   name: Okhla Depot,   lat: 28.5300, lon: 77.2700, fleet_size: 30, reserve: 4, out_of_service: 1}
-  - {id: depot_kalkaji, name: Kalkaji Depot, lat: 28.5420, lon: 77.2560, fleet_size: 16, reserve: 2, out_of_service: 0}
+  - {id: depot_tnagar, name: T. Nagar Depot, lat: 13.0347, lon: 80.2300, fleet_size: 44, reserve: 4, out_of_service: 1}
+  - {id: depot_adyar,  name: Adyar Depot,    lat: 13.0067, lon: 80.2532, fleet_size: 16, reserve: 2, out_of_service: 0}
 
-# type drives the base boarding / alighting weight (see demand_params.yaml)
-stops:
-  - {id: stop_1001, name: Anand Vihar ISBT,        lat: 28.6468, lon: 77.3159, type: hub}
-  - {id: stop_1002, name: Mayur Vihar Phase 1,     lat: 28.6040, lon: 77.2944, type: residential}
-  - {id: stop_1003, name: Akshardham,              lat: 28.6127, lon: 77.2773, type: commercial}
-  - {id: stop_1004, name: Nizamuddin,              lat: 28.5893, lon: 77.2507, type: hub}
-  - {id: stop_1005, name: Ashram,                  lat: 28.5720, lon: 77.2585, type: commercial}
-  - {id: stop_1006, name: Lajpat Nagar,            lat: 28.5677, lon: 77.2433, type: commercial}
-  - {id: stop_1007, name: Moolchand,               lat: 28.5645, lon: 77.2347, type: minor}
-  - {id: stop_1008, name: Greater Kailash,         lat: 28.5480, lon: 77.2380, type: residential}
-  - {id: stop_1021, name: Nehru Place,             lat: 28.5494, lon: 77.2517, type: hub}
-  - {id: stop_1010, name: Kalkaji Mandir,          lat: 28.5500, lon: 77.2588, type: minor}
-  - {id: stop_1011, name: Govindpuri,              lat: 28.5390, lon: 77.2640, type: residential}
-  - {id: stop_1012, name: Okhla Industrial Area,   lat: 28.5300, lon: 77.2710, type: commercial}
-  - {id: stop_1013, name: Jasola,                  lat: 28.5380, lon: 77.2830, type: commercial}
-  - {id: stop_1014, name: Sarita Vihar,            lat: 28.5310, lon: 77.2890, type: residential}
-  - {id: stop_1015, name: Badarpur Border,         lat: 28.4950, lon: 77.3030, type: hub}
-  - {id: stop_1016, name: Tughlakabad,             lat: 28.5025, lon: 77.2730, type: residential}
-  - {id: stop_1017, name: AIIMS,                   lat: 28.5672, lon: 77.2100, type: hub}
-  - {id: stop_1018, name: Defence Colony,          lat: 28.5740, lon: 77.2320, type: residential}
-  - {id: stop_1019, name: Chirag Delhi,            lat: 28.5380, lon: 77.2270, type: minor}
-  - {id: stop_1020, name: Saket,                   lat: 28.5245, lon: 77.2066, type: commercial}
-  - {id: stop_1022, name: Kalindi Kunj,            lat: 28.5440, lon: 77.3100, type: residential}
-
+# gtfs_route_id: one direction of the route in the feed (the other is its reverse).
+# planned_headway_min: from GTFS trips per day; min_headway_min: longest headway allowed.
 # busy_factor scales the calibrated daily total (1.0 = network average).
 routes:
-  - id: "534"
-    name: "534 Anand Vihar ISBT – Nehru Place"
-    depot_id: depot_okhla
+  - id: "3"
+    gtfs_route_id: "24065"      # 185 trips/day
+    name: "3 T. Nagar – Thiruvanmiyur"
+    depot_id: depot_tnagar
     color: "#E4572E"
-    planned_headway_min: 12
-    min_headway_min: 15
-    busy_factor: 1.1
-    stops: [stop_1001, stop_1002, stop_1003, stop_1004, stop_1005, stop_1006, stop_1007, stop_1008, stop_1021]
-  - id: "423"
-    name: "423 Lajpat Nagar – Badarpur Border"
-    depot_id: depot_okhla
+    planned_headway_min: 8
+    min_headway_min: 12
+    busy_factor: 1.5          # busiest route in the feed
+  - id: "9M"
+    gtfs_route_id: "23049"      # 55 trips/day
+    name: "9M T. Nagar – AGS Colony"
+    depot_id: depot_tnagar
     color: "#17BEBB"
     planned_headway_min: 15
     min_headway_min: 20
     busy_factor: 0.45
-    stops: [stop_1006, stop_1005, stop_1010, stop_1011, stop_1012, stop_1013, stop_1014, stop_1015]
-  - id: "511"
-    name: "511 AIIMS – Saket"
-    depot_id: depot_kalkaji
+  - id: "5E"
+    gtfs_route_id: "18958"      # 97 trips/day
+    name: "5E Vadapalani – Besant Nagar"
+    depot_id: depot_tnagar
     color: "#FFC914"
-    planned_headway_min: 12
+    planned_headway_min: 10
     min_headway_min: 15
     busy_factor: 1.0
-    stops: [stop_1017, stop_1018, stop_1007, stop_1008, stop_1019, stop_1020]
-  - id: "604"
-    name: "604 Nehru Place – Badarpur Border"
-    depot_id: depot_kalkaji
+  - id: "78"
+    gtfs_route_id: "23937"      # 56 trips/day
+    name: "78 Koyambedu – Thiruvanmiyur"
+    depot_id: depot_adyar
     color: "#76B041"
     planned_headway_min: 15
     min_headway_min: 20
     busy_factor: 0.9
-    stops: [stop_1021, stop_1010, stop_1011, stop_1016, stop_1015]
-  - id: "717"
-    name: "717 Kalindi Kunj – Nehru Place"
-    depot_id: depot_okhla
+  - id: "S13"
+    gtfs_route_id: "23065"      # 30 trips/day
+    name: "S13 Velachery – Guindy"
+    depot_id: depot_adyar
     color: "#8E6C8A"
     planned_headway_min: 20
-    min_headway_min: 20
+    min_headway_min: 30
     busy_factor: 0.4
-    stops: [stop_1022, stop_1013, stop_1014, stop_1012, stop_1011, stop_1010, stop_1021]
+
+# Stop types drive the base boarding / alighting weight (demand_params.yaml).
+# GTFS stop_id -> type; stops not listed get default_stop_type.
+default_stop_type: minor
+stop_types:
+  "5823": hub           # Thiyagarayanagar Terminus
+  "5908": hub           # Thiruvanmiyur Bus Stand
+  "4942": hub           # Vadapalani Bus Stand
+  "5822": hub           # M.G.R. Koyambedu Bus Terminus
+  "8651": hub           # Velachery
+  "8660": hub           # Velachery
+  "1465": hub           # Guindy Railway Station
+  "9005": hub           # Guindy Railway Station
+  "1461": hub           # Guindy Bus Terminus
+  "8953": hub           # Besant Nagar Terminus
+  "5784": commercial    # Saidapet Metro
+  "9164": commercial    # Saidapet
+  "8820": commercial    # Tidel Park
+  "10133": commercial   # Tharamani / IRTC Junction
+  "502": commercial     # Anna University
+  "4940": commercial    # Vadapalani
+  "4": commercial       # K.K. Nagar
+  "26": commercial      # Ashok Pillar
+  "8993": commercial    # Adyar Signal
+  "10980": commercial   # Adyar Signal
+  "1048": commercial    # Concorde / Chellammal College
+  "31": residential     # CIT Nagar
+  "70": residential     # M G R Nagar
+  "94": residential     # Nesapakkam
+  "8689": residential   # Tansi Nagar
+  "8734": residential   # Bharathi Nagar
+  "8736": residential   # Baby Nagar
+  "5751": residential   # Adyar Gandhi Nagar
+  "10785": residential  # Adambakkam AGS Officers Colony
+  "10786": residential  # Adambakkam AGS Officers Colony
+  "8697": residential   # Adambakkam Saraswathi Nagar
+  "8696": residential   # Adambakkam Saraswathi Nagar
+  "9176": residential   # Kalaimagal Nagar

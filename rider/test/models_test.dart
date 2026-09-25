@@ -5,29 +5,29 @@ import 'package:aduthabus_rider/util/load.dart';
 void main() {
   test('Route parses the contract example', () {
     final r = TransitRoute.fromJson({
-      'id': '534',
-      'name': '534 Anand Vihar ISBT – Nehru Place',
-      'depot_id': 'depot_okhla',
+      'id': '3',
+      'name': '3 T. Nagar – Thiruvanmiyur',
+      'depot_id': 'depot_tnagar',
       'color': '#E4572E',
       'min_headway_min': 15,
       'shape': {
         'type': 'LineString',
         'coordinates': [
-          [77.315, 28.646],
-          [77.251, 28.549],
+          [80.23001, 13.03467],
+          [80.21334, 13.00824],
         ],
       },
       'stops': [
-        {'id': 'stop_1021', 'name': 'Nehru Place', 'lat': 28.5494, 'lon': 77.2517, 'seq': 14},
+        {'id': '1465', 'name': 'Guindy Railway Station', 'lat': 13.00824, 'lon': 80.21334, 'seq': 14},
       ],
     });
-    expect(r.shape.first, [77.315, 28.646]);
-    expect(r.stops.single.name, 'Nehru Place');
+    expect(r.shape.first, [80.23001, 13.03467]);
+    expect(r.stops.single.name, 'Guindy Railway Station');
   });
 
   test('CrowdingReport uses contract field names', () {
-    final j = CrowdingReport(busId: 'b', routeId: '534', level: CrowdingLevel.crowded, lat: 1, lon: 2).toJson();
-    expect(j, {'bus_id': 'b', 'route_id': '534', 'level': 'crowded', 'lat': 1.0, 'lon': 2.0});
+    final j = CrowdingReport(busId: 'b', routeId: '3', level: CrowdingLevel.crowded, lat: 1, lon: 2).toJson();
+    expect(j, {'bus_id': 'b', 'route_id': '3', 'level': 'crowded', 'lat': 1.0, 'lon': 2.0});
   });
 
   test('load colour thresholds', () {

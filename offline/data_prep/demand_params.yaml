@@ -5,12 +5,12 @@
 #
 # The base rate is calibrated so that a route's daily boardings equal
 #     pax_per_bus_day x planned buses on the route x route busy_factor
-# pax_per_bus_day is a calibration placeholder close to published DTC daily
-# ridership divided by fleet size. Replace it when a better figure is known.
+# pax_per_bus_day: Chennai MTC carries about 32 lakh passengers a day on about
+# 3,230 scheduled services (2024), so about 1,000 per bus.
 # Real ETM files in the same schema (see synthetic_etm.py) replace this model
 # without code changes.
 
-pax_per_bus_day: 600
+pax_per_bus_day: 1000
 
 # relative boarding / alighting attraction by stop type
 stop_type_weight:
