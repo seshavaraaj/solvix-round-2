@@ -1,0 +1,3 @@
+2. AI-Based Dynamic Public Transport Scheduling
+
+Develop an AI-based system that dynamically optimizes public bus schedules and vehicle deployment based on passenger demand, traffic conditions, current delays, route congestion, and vehicle availability. The system should analyze historical and real-time transportation data to identify overcrowded routes, underutilized services, and emerging delays, and dynamically recommend adjustments to bus frequency and deployment. The solution should help reduce passenger waiting time, overcrowding, and service delays while improving the overall utilization of available buses.
