@@ -4,20 +4,25 @@
 double _d(Object? v) => (v as num).toDouble();
 
 class Health {
-  Health({required this.status, required this.modelsLoaded, required this.db, required this.version});
+  Health({required this.status, required this.modelsLoaded, required this.db, required this.version, this.error});
 
   final String status;
   final bool modelsLoaded;
   final String db;
   final String version;
 
+  /// Start-up failure message when [status] is 'error'.
+  final String? error;
+
   bool get ok => status == 'ok';
+  bool get failed => status == 'error';
 
   factory Health.fromJson(Map<String, dynamic> j) => Health(
         status: j['status'] as String,
         modelsLoaded: j['models_loaded'] as bool? ?? false,
         db: j['db'] as String? ?? 'down',
         version: j['version'] as String? ?? '',
+        error: j['error'] as String?,
       );
 }
 

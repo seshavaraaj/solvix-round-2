@@ -67,8 +67,9 @@ async def loading_gate(request: Request, call_next):
 
 @app.get("/health", response_model=HealthOut, tags=["health"])
 def health() -> dict:
-    return {"status": "ok" if state.ready else "loading", "models_loaded": state.models_loaded,
-            "db": "ok" if db.ping() else "down", "version": settings.version}
+    status = "ok" if state.ready else "error" if state.error else "loading"
+    return {"status": status, "models_loaded": state.models_loaded, "db": "ok" if db.ping() else "down",
+            "version": settings.version, "error": state.error}
 
 
 for r in (auth.router, clock.router, state_router.router, public.router, cycle.router, decisions.router,

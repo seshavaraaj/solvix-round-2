@@ -3,8 +3,8 @@
 # static sites. Secrets are never in this file.
 #
 # Note: the API service does not set rootDir because it reads the committed
-# artefacts in data/artefacts/ and runs scripts/seed_db.py, which are outside
-# api/. buildFilter keeps auto-deploys limited to the backend paths.
+# artefacts in data/artefacts/, which are outside api/. buildFilter keeps
+# auto-deploys limited to the backend paths.
 
 services:
   - type: web
@@ -13,7 +13,8 @@ services:
     plan: free
     region: singapore
     buildCommand: pip install -r api/requirements.txt
-    startCommand: python scripts/seed_db.py && cd api && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    # Seeding runs inside the API start-up thread (api/app/seed.py), so the port opens at once.
+    startCommand: cd api && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     autoDeploy: true
     buildFilter:

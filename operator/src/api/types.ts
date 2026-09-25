@@ -66,10 +66,12 @@ export interface FeedHealth {
 }
 
 export interface Health {
-  status: "ok" | "loading";
+  status: "ok" | "loading" | "error";
   models_loaded: boolean;
   db: "ok" | "down";
   version: string;
+  /** Start-up failure message when status is "error". */
+  error: string | null;
 }
 
 export interface LoginResponse {

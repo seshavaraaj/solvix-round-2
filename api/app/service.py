@@ -23,6 +23,7 @@ from .core.network import Network, load_network
 from .core.replay import BusState, Replay
 from .core.timeutil import hhmm, parse_iso, to_iso
 from .core.traveltime import TravelTime
+from .seed import seed
 
 VIEW_BUCKET_S = 300
 
@@ -84,7 +85,7 @@ class AppState:
                                  "fleet_size": d.fleet_size, "reserve": d.reserve, "out_of_service": d.out_of_service}
                           for d in self.net.depots.values()}
         try:
-            db.create_all()
+            seed(net=self.net)  # tables, demo users, default config (replaces a separate seed_db.py process)
             with db.engine().begin() as c:
                 for row in c.execute(select(db.routes_config)).mappings():
                     self.routes_cfg[row["route_id"]] = json.loads(row["payload"])

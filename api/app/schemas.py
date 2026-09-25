@@ -252,7 +252,8 @@ class CycleOut(_M):
 
 
 class HealthOut(_M):
-    status: Literal["ok", "loading"]
+    status: Literal["ok", "loading", "error"]
     models_loaded: bool
     db: Literal["ok", "down"]
     version: str
+    error: Optional[str] = None

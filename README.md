@@ -118,7 +118,7 @@ headway-based dispatching. All inputs except weather are synthetic.
 
 1. Push to GitHub, then in Render: **New → Blueprint** and pick this repo (`render.yaml`).
 2. Set `OPERATOR_PASSWORD` and `ADMIN_PASSWORD` in the dashboard (marked `sync: false`).
-3. Start command runs `scripts/seed_db.py` (creates tables, resets demo passwords from env) then Uvicorn.
+3. Start command runs Uvicorn only. The API's start-up thread seeds the database (`api/app/seed.py`: creates tables, resets demo passwords from env), so the port opens at once.
 4. After each deploy: `curl https://aduthabus-api.onrender.com/health` and one `/state` call.
 5. Free Postgres expires 30 days after creation: run `DATABASE_URL=<external url> python scripts/export_log.py` before then; recreate with `api/schema.sql` + `seed_db.py`.
 
@@ -136,7 +136,7 @@ Memory and timing (`python scripts/toy_load_test.py`):
 | Python 3.11 | Python 3.12 on Render (`PYTHON_VERSION`) | numpy 2.5 needs ≥ 3.12 |
 | passlib[bcrypt] | `bcrypt` directly | passlib 1.7.4 breaks with bcrypt 5 |
 | gtfs-kit | plain Polars CSV reading in `gtfs_subset.py` | avoids GeoPandas in the offline stack |
-| Contract §11 API root `api` | no `rootDir`; build/start commands `cd api` | the API reads `data/artefacts/` and runs `scripts/seed_db.py`, which are outside `api/` |
+| Contract §11 API root `api` | no `rootDir`; build/start commands `cd api` | the API reads `data/artefacts/`, which is outside `api/` |
 | Strategy 3 "holding + reallocation" | headway-based holding + reallocation | schedule-based holding cannot absorb a bus added mid-day; see `api/app/sim/strategies.py` |
 | `decided_at` | replay time (same clock as `created_at`); wall time kept in DB column `decided_wall_at` | consistent timeline on the console |
 | Optional live mode, LLM rewording (B7.3–B7.4) | not built | optional; replay mode is the demo |

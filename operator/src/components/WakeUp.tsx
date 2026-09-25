@@ -10,6 +10,7 @@ interface Props {
 
 /**
  * Blocks the app until GET /health says "ok", polling every 3 s.
+ * If /health says "error", start-up failed on the server: show its message instead of waiting forever.
  * Shown again (as an overlay, so screen state survives) whenever a call returns 503 loading
  * or cannot reach the server.
  */
@@ -17,6 +18,7 @@ export function WakeUp({ children, onAwake, message = "Starting server (about 1 
   const [awake, setAwake] = useState(false);
   const [everAwake, setEverAwake] = useState(false);
   const [seconds, setSeconds] = useState(0);
+  const [failure, setFailure] = useState<string | null>(null);
   const onAwakeRef = useRef(onAwake);
   onAwakeRef.current = onAwake;
 
@@ -30,6 +32,7 @@ export function WakeUp({ children, onAwake, message = "Starting server (about 1 
       const h = await getHealth();
       if (cancelled) return;
       setSeconds(Math.round((Date.now() - started) / 1000));
+      setFailure(h?.status === "error" ? (h.error ?? "unknown error") : null);
       if (h?.status === "ok") {
         setAwake(true);
         setEverAwake(true);
@@ -44,7 +47,13 @@ export function WakeUp({ children, onAwake, message = "Starting server (about 1 
     };
   }, [awake]);
 
-  const screen = (
+  const screen = failure ? (
+    <div className={everAwake ? "wake overlay" : "wake"} role="alert">
+      <p className="error">The server failed to start.</p>
+      <p className="muted">{failure}</p>
+      <p className="muted">Check the API logs on Render, then redeploy or restart the service.</p>
+    </div>
+  ) : (
     <div className={everAwake ? "wake overlay" : "wake"} role="status" aria-live="polite">
       <div className="spinner" aria-hidden />
       <p>{message}</p>

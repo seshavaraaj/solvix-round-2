@@ -72,7 +72,7 @@ Self-rolled JWT (FastAPI + passlib + PyJWT). No paid identity vendor.
 
 JWT claims: `{"sub": "string", "role": "operator|admin|rider", "exp": <unix seconds>}`. Lifetime: 12 h for operator/admin, 30 days for rider.
 
-Demo accounts are seeded by `scripts/seed_db.py`: `operator / <from env>`, `admin / <from env>`. Passwords live in Render env vars, never in Git.
+Demo accounts are seeded at API start-up by `api/app/seed.py` (also runnable as `scripts/seed_db.py`): `operator / <from env>`, `admin / <from env>`. Passwords live in Render env vars, never in Git.
 
 Public endpoints (no token): `/health`, `/routes`, `/buses`, `/alerts`, `/results`, `/auth/*`.
 
@@ -215,7 +215,7 @@ Frontend mirrors these as TypeScript interfaces (`operator/src/api/types.ts`, `a
 
 | # | Method + path | Auth | Request | Response | Milestone | Producer (A) phase | Consumer (B) phase |
 |---|---|---|---|---|---|---|---|
-| 1 | `GET /health` | none | — | `{"status":"ok"\|"loading","models_loaded":bool,"db":"ok"\|"down","version":"sha"}` | M0 | B0 | F1, F5 |
+| 1 | `GET /health` | none | — | `{"status":"ok"\|"loading"\|"error","models_loaded":bool,"db":"ok"\|"down","version":"sha","error":str\|null}` | M0 | B0 | F1, F5 |
 | 2 | `POST /auth/login` | none | `{"username","password"}` | `{"token","role","expires_at"}` | M1 | B3 | F1, F6 |
 | 3 | `POST /auth/device` | none | `{"device_id":"uuid"}` | `{"token","role":"rider","expires_at"}` | M4 | B6 | F5 |
 | 4 | `GET /clock` | operator | — | `{"t","speed":1\|10\|30,"playing":bool,"scenario"}` | M1 | B3 | F1 |
@@ -241,7 +241,7 @@ Frontend mirrors these as TypeScript interfaces (`operator/src/api/types.ts`, `a
 
 Notes:
 - Endpoints 4, 5, 9, 11, 13, 17 extend the table in solution2 §6.8. They are needed by the UIs described in solution2 §6.10.
-- Cold start: while models load, every endpoint except `/health` returns `503` with code `"loading"`. Frontends show the wake-up screen until `/health` returns `"status":"ok"`.
+- Cold start: while models load, every endpoint except `/health` returns `503` with code `"loading"`. Frontends show the wake-up screen until `/health` returns `"status":"ok"`. If start-up fails, `/health` returns `"status":"error"` with the message in `error`, and frontends show that instead of waiting.
 - The replay clock state lives in API memory. If the service restarts, the clock resets to the scenario start. Frontends must re-read `GET /clock` after a `503` or reconnect.
 
 ## 7. Mock server (unblocks Person B from day 1)
