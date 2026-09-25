@@ -1,0 +1,10 @@
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+# Keep web_dist/ committed only if the Render Flutter build fallback is used (frontend plan F5).
