@@ -1,0 +1,3 @@
+# Keep committed artefacts byte-exact on Windows checkouts (core.autocrlf):
+# LightGBM cannot parse model files with CRLF line endings.
+data/artefacts/** -text
