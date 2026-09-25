@@ -32,5 +32,5 @@ Render build command and fallback: `.reports/implementation/03-frontend-handoff.
 ## Notes
 
 - Device identity: a UUID is generated on first run and stored in `shared_preferences`. `POST /auth/device` is called when the server wakes, and the token is refreshed once on `401`.
-- Map: `flutter_map` + `vector_map_tiles` with the OpenFreeMap style. If the style fails to load, routes and buses still draw on a plain background.
-- Bundle size: test the first load on the demo phone (target < 5 s on 4G). If it is too heavy, drop `vector_map_tiles` first; the plain-background fallback already works without it.
+- Map: `flutter_map` with OpenStreetMap standard raster tiles (free, no key; light use only under the [OSM tile policy](https://operations.osmfoundation.org/policies/tiles/); attribution shown). Not vector tiles: `vector_map_tiles` caches with `dart:io` and draws no basemap on the web. If tiles fail to load, routes and buses still draw on a plain background.
+- Bundle size: test the first load on the demo phone (target < 5 s on 4G).

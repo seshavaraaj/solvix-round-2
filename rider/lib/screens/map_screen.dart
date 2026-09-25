@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:vector_map_tiles/vector_map_tiles.dart';
 
 import '../api/client.dart';
 import '../api/models.dart';
@@ -23,12 +22,8 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  // Shared across visits so the style is fetched once per session.
-  static Future<Style?>? _styleFuture;
-
   final _map = MapController();
   Timer? _timer;
-  Style? _style;
   bool _mapReady = false;
   List<TransitRoute> _routes = const [];
   List<Bus> _buses = const [];
@@ -37,10 +32,6 @@ class _MapScreenState extends State<MapScreen> {
   @override
   void initState() {
     super.initState();
-    _styleFuture ??= StyleReader(uri: mapStyleUrl).read().then<Style?>((s) => s).catchError((Object _) => null);
-    _styleFuture!.then((s) {
-      if (mounted) setState(() => _style = s);
-    });
     _loadRoutes();
     _pollBuses();
     _timer = Timer.periodic(const Duration(seconds: 5), (_) => _pollBuses());
@@ -93,7 +84,6 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final style = _style;
     return Stack(
       children: [
         FlutterMap(
@@ -108,9 +98,12 @@ class _MapScreenState extends State<MapScreen> {
             },
           ),
           children: [
-            // If OpenFreeMap is unreachable, routes and buses still draw on a plain background.
-            if (style != null)
-              VectorTileLayer(tileProviders: style.providers, theme: style.theme, sprites: style.sprites),
+            // If the tile server is unreachable, routes and buses still draw on the plain background.
+            TileLayer(
+              urlTemplate: mapTileUrl,
+              userAgentPackageName: 'in.aduthabus.rider',
+              maxNativeZoom: 19,
+            ),
             PolylineLayer(
               polylines: [
                 for (final r in _routes)
@@ -156,7 +149,7 @@ class _MapScreenState extends State<MapScreen> {
                   Marker(point: LatLng(b.lat, b.lon), width: 44, height: 26, child: BusDot(bus: b)),
               ],
             ),
-            const SimpleAttributionWidget(source: Text('OpenFreeMap © OpenMapTiles © OpenStreetMap')),
+            const SimpleAttributionWidget(source: Text('OpenStreetMap contributors')),
           ],
         ),
         if (_error != null)
