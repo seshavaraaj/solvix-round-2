@@ -1,0 +1,457 @@
+[
+ {
+  "id": "423",
+  "name": "423 Lajpat Nagar – Badarpur Border",
+  "depot_id": "depot_okhla",
+  "color": "#17BEBB",
+  "min_headway_min": 20.0,
+  "shape": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     77.2433,
+     28.5677
+    ],
+    [
+     77.2585,
+     28.572
+    ],
+    [
+     77.2588,
+     28.55
+    ],
+    [
+     77.264,
+     28.539
+    ],
+    [
+     77.271,
+     28.53
+    ],
+    [
+     77.283,
+     28.538
+    ],
+    [
+     77.289,
+     28.531
+    ],
+    [
+     77.303,
+     28.495
+    ]
+   ]
+  },
+  "stops": [
+   {
+    "id": "stop_1006",
+    "name": "Lajpat Nagar",
+    "lat": 28.5677,
+    "lon": 77.2433,
+    "seq": 0
+   },
+   {
+    "id": "stop_1005",
+    "name": "Ashram",
+    "lat": 28.572,
+    "lon": 77.2585,
+    "seq": 1
+   },
+   {
+    "id": "stop_1010",
+    "name": "Kalkaji Mandir",
+    "lat": 28.55,
+    "lon": 77.2588,
+    "seq": 2
+   },
+   {
+    "id": "stop_1011",
+    "name": "Govindpuri",
+    "lat": 28.539,
+    "lon": 77.264,
+    "seq": 3
+   },
+   {
+    "id": "stop_1012",
+    "name": "Okhla Industrial Area",
+    "lat": 28.53,
+    "lon": 77.271,
+    "seq": 4
+   },
+   {
+    "id": "stop_1013",
+    "name": "Jasola",
+    "lat": 28.538,
+    "lon": 77.283,
+    "seq": 5
+   },
+   {
+    "id": "stop_1014",
+    "name": "Sarita Vihar",
+    "lat": 28.531,
+    "lon": 77.289,
+    "seq": 6
+   },
+   {
+    "id": "stop_1015",
+    "name": "Badarpur Border",
+    "lat": 28.495,
+    "lon": 77.303,
+    "seq": 7
+   }
+  ]
+ },
+ {
+  "id": "511",
+  "name": "511 AIIMS – Saket",
+  "depot_id": "depot_kalkaji",
+  "color": "#FFC914",
+  "min_headway_min": 15.0,
+  "shape": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     77.21,
+     28.5672
+    ],
+    [
+     77.232,
+     28.574
+    ],
+    [
+     77.2347,
+     28.5645
+    ],
+    [
+     77.238,
+     28.548
+    ],
+    [
+     77.227,
+     28.538
+    ],
+    [
+     77.2066,
+     28.5245
+    ]
+   ]
+  },
+  "stops": [
+   {
+    "id": "stop_1017",
+    "name": "AIIMS",
+    "lat": 28.5672,
+    "lon": 77.21,
+    "seq": 0
+   },
+   {
+    "id": "stop_1018",
+    "name": "Defence Colony",
+    "lat": 28.574,
+    "lon": 77.232,
+    "seq": 1
+   },
+   {
+    "id": "stop_1007",
+    "name": "Moolchand",
+    "lat": 28.5645,
+    "lon": 77.2347,
+    "seq": 2
+   },
+   {
+    "id": "stop_1008",
+    "name": "Greater Kailash",
+    "lat": 28.548,
+    "lon": 77.238,
+    "seq": 3
+   },
+   {
+    "id": "stop_1019",
+    "name": "Chirag Delhi",
+    "lat": 28.538,
+    "lon": 77.227,
+    "seq": 4
+   },
+   {
+    "id": "stop_1020",
+    "name": "Saket",
+    "lat": 28.5245,
+    "lon": 77.2066,
+    "seq": 5
+   }
+  ]
+ },
+ {
+  "id": "534",
+  "name": "534 Anand Vihar ISBT – Nehru Place",
+  "depot_id": "depot_okhla",
+  "color": "#E4572E",
+  "min_headway_min": 15.0,
+  "shape": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     77.3159,
+     28.6468
+    ],
+    [
+     77.2944,
+     28.604
+    ],
+    [
+     77.2773,
+     28.6127
+    ],
+    [
+     77.2507,
+     28.5893
+    ],
+    [
+     77.2585,
+     28.572
+    ],
+    [
+     77.2433,
+     28.5677
+    ],
+    [
+     77.2347,
+     28.5645
+    ],
+    [
+     77.238,
+     28.548
+    ],
+    [
+     77.2517,
+     28.5494
+    ]
+   ]
+  },
+  "stops": [
+   {
+    "id": "stop_1001",
+    "name": "Anand Vihar ISBT",
+    "lat": 28.6468,
+    "lon": 77.3159,
+    "seq": 0
+   },
+   {
+    "id": "stop_1002",
+    "name": "Mayur Vihar Phase 1",
+    "lat": 28.604,
+    "lon": 77.2944,
+    "seq": 1
+   },
+   {
+    "id": "stop_1003",
+    "name": "Akshardham",
+    "lat": 28.6127,
+    "lon": 77.2773,
+    "seq": 2
+   },
+   {
+    "id": "stop_1004",
+    "name": "Nizamuddin",
+    "lat": 28.5893,
+    "lon": 77.2507,
+    "seq": 3
+   },
+   {
+    "id": "stop_1005",
+    "name": "Ashram",
+    "lat": 28.572,
+    "lon": 77.2585,
+    "seq": 4
+   },
+   {
+    "id": "stop_1006",
+    "name": "Lajpat Nagar",
+    "lat": 28.5677,
+    "lon": 77.2433,
+    "seq": 5
+   },
+   {
+    "id": "stop_1007",
+    "name": "Moolchand",
+    "lat": 28.5645,
+    "lon": 77.2347,
+    "seq": 6
+   },
+   {
+    "id": "stop_1008",
+    "name": "Greater Kailash",
+    "lat": 28.548,
+    "lon": 77.238,
+    "seq": 7
+   },
+   {
+    "id": "stop_1021",
+    "name": "Nehru Place",
+    "lat": 28.5494,
+    "lon": 77.2517,
+    "seq": 8
+   }
+  ]
+ },
+ {
+  "id": "604",
+  "name": "604 Nehru Place – Badarpur Border",
+  "depot_id": "depot_kalkaji",
+  "color": "#76B041",
+  "min_headway_min": 20.0,
+  "shape": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     77.2517,
+     28.5494
+    ],
+    [
+     77.2588,
+     28.55
+    ],
+    [
+     77.264,
+     28.539
+    ],
+    [
+     77.273,
+     28.5025
+    ],
+    [
+     77.303,
+     28.495
+    ]
+   ]
+  },
+  "stops": [
+   {
+    "id": "stop_1021",
+    "name": "Nehru Place",
+    "lat": 28.5494,
+    "lon": 77.2517,
+    "seq": 0
+   },
+   {
+    "id": "stop_1010",
+    "name": "Kalkaji Mandir",
+    "lat": 28.55,
+    "lon": 77.2588,
+    "seq": 1
+   },
+   {
+    "id": "stop_1011",
+    "name": "Govindpuri",
+    "lat": 28.539,
+    "lon": 77.264,
+    "seq": 2
+   },
+   {
+    "id": "stop_1016",
+    "name": "Tughlakabad",
+    "lat": 28.5025,
+    "lon": 77.273,
+    "seq": 3
+   },
+   {
+    "id": "stop_1015",
+    "name": "Badarpur Border",
+    "lat": 28.495,
+    "lon": 77.303,
+    "seq": 4
+   }
+  ]
+ },
+ {
+  "id": "717",
+  "name": "717 Kalindi Kunj – Nehru Place",
+  "depot_id": "depot_okhla",
+  "color": "#8E6C8A",
+  "min_headway_min": 20.0,
+  "shape": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     77.31,
+     28.544
+    ],
+    [
+     77.283,
+     28.538
+    ],
+    [
+     77.289,
+     28.531
+    ],
+    [
+     77.271,
+     28.53
+    ],
+    [
+     77.264,
+     28.539
+    ],
+    [
+     77.2588,
+     28.55
+    ],
+    [
+     77.2517,
+     28.5494
+    ]
+   ]
+  },
+  "stops": [
+   {
+    "id": "stop_1022",
+    "name": "Kalindi Kunj",
+    "lat": 28.544,
+    "lon": 77.31,
+    "seq": 0
+   },
+   {
+    "id": "stop_1013",
+    "name": "Jasola",
+    "lat": 28.538,
+    "lon": 77.283,
+    "seq": 1
+   },
+   {
+    "id": "stop_1014",
+    "name": "Sarita Vihar",
+    "lat": 28.531,
+    "lon": 77.289,
+    "seq": 2
+   },
+   {
+    "id": "stop_1012",
+    "name": "Okhla Industrial Area",
+    "lat": 28.53,
+    "lon": 77.271,
+    "seq": 3
+   },
+   {
+    "id": "stop_1011",
+    "name": "Govindpuri",
+    "lat": 28.539,
+    "lon": 77.264,
+    "seq": 4
+   },
+   {
+    "id": "stop_1010",
+    "name": "Kalkaji Mandir",
+    "lat": 28.55,
+    "lon": 77.2588,
+    "seq": 5
+   },
+   {
+    "id": "stop_1021",
+    "name": "Nehru Place",
+    "lat": 28.5494,
+    "lon": 77.2517,
+    "seq": 6
+   }
+  ]
+ }
+]

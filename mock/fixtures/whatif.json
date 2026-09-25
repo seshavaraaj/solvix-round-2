@@ -1,0 +1,61 @@
+{
+ "recommendation_id": "rec_0001",
+ "horizon_min": 120,
+ "runtime_s": 0.4,
+ "without": {
+  "avg_wait_min": 6.7,
+  "p95_wait_min": 14.2,
+  "left_behind": 32,
+  "overload_min": 162,
+  "bunching_events": 12
+ },
+ "with": {
+  "avg_wait_min": 6.5,
+  "p95_wait_min": 13.5,
+  "left_behind": 0,
+  "overload_min": 101,
+  "bunching_events": 12
+ },
+ "series": [
+  {
+   "t": "2026-09-25T17:15:00+05:30",
+   "load_without": 0.38,
+   "load_with": 0.38
+  },
+  {
+   "t": "2026-09-25T17:30:00+05:30",
+   "load_without": 0.61,
+   "load_with": 0.6
+  },
+  {
+   "t": "2026-09-25T17:45:00+05:30",
+   "load_without": 0.97,
+   "load_with": 1.02
+  },
+  {
+   "t": "2026-09-25T18:00:00+05:30",
+   "load_without": 1.17,
+   "load_with": 1.09
+  },
+  {
+   "t": "2026-09-25T18:15:00+05:30",
+   "load_without": 1.27,
+   "load_with": 1.15
+  },
+  {
+   "t": "2026-09-25T18:30:00+05:30",
+   "load_without": 1.27,
+   "load_with": 1.1
+  },
+  {
+   "t": "2026-09-25T18:45:00+05:30",
+   "load_without": 1.27,
+   "load_with": 1.33
+  },
+  {
+   "t": "2026-09-25T19:00:00+05:30",
+   "load_without": 1.34,
+   "load_with": 1.17
+  }
+ ]
+}

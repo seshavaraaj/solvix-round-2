@@ -1,0 +1,6 @@
+{% set to = r.expected_effect.to_route %}{% set fr = r.expected_effect.from_route %}
+Move {{ r.bus_count }} bus{{ "es" if r.bus_count != 1 else "" }} from Route {{ r.from_route_id }} to Route {{ r.to_route_id }}, {{ start }}–{{ end }}.
+Route {{ r.to_route_id }} is forecast at {{ to.peak_load_before | pct }} of capacity{% if c.to_stop %} near {{ c.to_stop }}{% endif %} (P90); Route {{ r.from_route_id }} is at {{ fr.peak_load_before | pct }}.
+Expected effect: average wait on {{ r.to_route_id }} falls from {{ to.wait_min_before | num }} to {{ to.wait_min_after | num }} minutes and peak load from {{ to.peak_load_before | pct }} to {{ to.peak_load_after | pct }};
+{{ r.from_route_id }} keeps its {{ c.from_min_headway | num }}-minute minimum frequency (wait {{ fr.wait_min_before | num }} to {{ fr.wait_min_after | num }} minutes).
+Extra empty travel: {{ r.deadhead_km | num }} km. Confidence: {{ r.confidence }}.

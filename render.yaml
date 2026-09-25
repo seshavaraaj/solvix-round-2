@@ -1,0 +1,96 @@
+# Render Blueprint (contract §11). Person A owns this file; Person B supplies
+# the static-site entries. Free tier only: one web service, one Postgres,
+# static sites. Secrets are never in this file.
+#
+# Note: the API service does not set rootDir because it reads the committed
+# artefacts in data/artefacts/ and runs scripts/seed_db.py, which are outside
+# api/. buildFilter keeps auto-deploys limited to the backend paths.
+
+services:
+  - type: web
+    name: transitpulse-api
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r api/requirements.txt
+    startCommand: python scripts/seed_db.py && cd api && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - api/**
+        - data/artefacts/**
+        - scripts/**
+        - render.yaml
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"          # numpy 2.5 needs Python >= 3.12
+      - key: DATABASE_URL
+        fromDatabase:
+          name: transitpulse-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: OPERATOR_PASSWORD
+        sync: false              # set in the Render dashboard; never in Git
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://transitpulse-operator.onrender.com,https://transitpulse-admin.onrender.com,https://transitpulse-rider.onrender.com,http://localhost:5173,http://localhost:5174,http://localhost:8080
+      - key: LIVE_MODE
+        value: "false"
+      - key: DEFAULT_SCENARIO
+        value: event_surge
+      - key: GTFS_RT_KEY
+        sync: false              # only for optional live mode
+
+  # ---- Person B: static sites (from .reports/implementation/03-frontend-handoff.md §1) ----
+  - type: web
+    name: transitpulse-operator
+    runtime: static
+    rootDir: operator
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://transitpulse-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  - type: web
+    name: transitpulse-admin
+    runtime: static
+    rootDir: admin
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://transitpulse-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  - type: web
+    name: transitpulse-rider
+    runtime: static
+    rootDir: rider
+    # Render static sites do not include Flutter, so the build clones the stable SDK.
+    # Fallback (handoff §1): commit a local build to rider/web_dist/ and publish that instead.
+    buildCommand: >-
+      git clone https://github.com/flutter/flutter.git -b stable --depth 1 $HOME/flutter &&
+      $HOME/flutter/bin/flutter config --enable-web &&
+      $HOME/flutter/bin/flutter build web --release --dart-define=API_URL=$API_URL
+    staticPublishPath: build/web
+    envVars:
+      - key: API_URL
+        value: https://transitpulse-api.onrender.com
+
+databases:
+  - name: transitpulse-db
+    plan: free
+    region: singapore
+    databaseName: transitpulse
+    user: transitpulse

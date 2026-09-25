@@ -1,0 +1,39 @@
+{
+ "demand_features": [
+  "route_code",
+  "direction",
+  "stop_group",
+  "band",
+  "dow",
+  "is_holiday",
+  "rain_mm",
+  "temp_c",
+  "event_factor",
+  "horizon",
+  "base_target",
+  "lag_60",
+  "typical_lag_60"
+ ],
+ "tt_features": [
+  "route_code",
+  "direction",
+  "seg_idx",
+  "seg_km",
+  "band",
+  "dow",
+  "rain_mm",
+  "recent_speed_ratio"
+ ],
+ "route_codes": {
+  "423": 0,
+  "511": 1,
+  "534": 2,
+  "604": 3,
+  "717": 4
+ },
+ "demand_best_iter": [
+  284,
+  400
+ ],
+ "tt_best_iter": 400
+}

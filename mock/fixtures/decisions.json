@@ -1,0 +1,10 @@
+[
+ {
+  "recommendation_id": "rec_0001",
+  "decision": "approve",
+  "reason": null,
+  "note": null,
+  "decided_by": "operator",
+  "decided_at": "2026-09-25T17:15:00+05:30"
+ }
+]

@@ -1,0 +1,173 @@
+{
+  "network": {
+    "timezone": "Asia/Kolkata",
+    "capacity_rated": 60,
+    "capacity_crush": 90,
+    "layover_min": 6,
+    "deadhead_speed_kmh": 20,
+    "holidays": [
+      "2026-01-26",
+      "2026-03-04",
+      "2026-03-21",
+      "2026-04-03",
+      "2026-05-01",
+      "2026-08-15",
+      "2026-09-04",
+      "2026-10-02",
+      "2026-10-20",
+      "2026-11-08",
+      "2026-11-24",
+      "2026-12-25"
+    ]
+  },
+  "demand": {
+    "pax_per_bus_day": 600,
+    "stop_type_weight": {
+      "hub": 3.0,
+      "commercial": 2.0,
+      "residential": 1.5,
+      "minor": 0.7
+    },
+    "tod_profile": [
+      0.2,
+      0.1,
+      0.1,
+      0.1,
+      0.3,
+      1.0,
+      2.8,
+      5.5,
+      8.0,
+      7.2,
+      5.6,
+      4.8,
+      4.6,
+      4.5,
+      4.6,
+      5.0,
+      6.0,
+      7.6,
+      8.6,
+      7.8,
+      5.6,
+      3.6,
+      2.0,
+      0.8
+    ],
+    "evening_residential_bias": 1.25,
+    "day_type": {
+      "weekday": 1.0,
+      "saturday": 0.85,
+      "sunday": 0.7,
+      "holiday": 0.65
+    },
+    "weather": {
+      "rain_mm_breaks": [
+        0.2,
+        2.0,
+        7.5
+      ],
+      "demand_factor": [
+        1.0,
+        1.05,
+        1.12,
+        1.18
+      ],
+      "speed_factor": [
+        1.0,
+        0.95,
+        0.85,
+        0.75
+      ]
+    },
+    "events": [],
+    "travel_time": {
+      "speed_kmh_by_hour": [
+        28,
+        30,
+        30,
+        30,
+        28,
+        25,
+        22,
+        18,
+        16,
+        17,
+        19,
+        20,
+        20,
+        20,
+        20,
+        19,
+        17,
+        15.5,
+        15,
+        16,
+        18,
+        21,
+        24,
+        26
+      ],
+      "dwell_s_per_boarding": 2.5,
+      "dwell_s_min": 15,
+      "noise_cv": 0.12
+    }
+  },
+  "scenarios": {
+    "window": {
+      "start": "15:30",
+      "end": "20:30"
+    },
+    "clock_start": "16:30",
+    "scenarios": {
+      "normal_weekday": {
+        "label": "Normal weekday",
+        "date": "2026-09-23",
+        "rain_mm": 0.0,
+        "temp_c": 31.0,
+        "events": [],
+        "breakdowns": []
+      },
+      "heavy_rain": {
+        "label": "Heavy rain",
+        "date": "2026-09-24",
+        "rain_mm": 9.0,
+        "temp_c": 26.0,
+        "events": [],
+        "breakdowns": []
+      },
+      "event_surge": {
+        "label": "Event surge at Nehru Place",
+        "date": "2026-09-25",
+        "rain_mm": 0.0,
+        "temp_c": 30.0,
+        "events": [
+          {
+            "stops": [
+              "stop_1021",
+              "stop_1008",
+              "stop_1006"
+            ],
+            "start": "17:15",
+            "end": "19:00",
+            "factor": 2.6
+          }
+        ],
+        "breakdowns": []
+      },
+      "breakdown": {
+        "label": "Bus breakdown on Route 534",
+        "date": "2026-09-22",
+        "rain_mm": 0.0,
+        "temp_c": 31.0,
+        "events": [],
+        "breakdowns": [
+          {
+            "route_id": "534",
+            "at": "17:10"
+          }
+        ]
+      }
+    }
+  }
+}

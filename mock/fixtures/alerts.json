@@ -1,0 +1,30 @@
+[
+ {
+  "id": "al_28bb91",
+  "route_id": "534",
+  "kind": "bunching",
+  "message": "Buses on Route 534 are bunched; expect a longer wait, then two buses close together.",
+  "since": "2026-09-25T17:15:00+05:30"
+ },
+ {
+  "id": "al_731632",
+  "route_id": "534",
+  "kind": "crowded",
+  "message": "Route 534 is expected to be very crowded near Lajpat Nagar until 18:30.",
+  "since": "2026-09-25T17:15:00+05:30"
+ },
+ {
+  "id": "al_a2209e",
+  "route_id": "534",
+  "kind": "service_change",
+  "message": "Extra bus on Route 534 17:30–19:00 (moved from Route 423).",
+  "since": "2026-09-25T17:15:00+05:30"
+ },
+ {
+  "id": "al_fb6819",
+  "route_id": "423",
+  "kind": "service_change",
+  "message": "Route 423 runs fewer buses 17:30–19:00. Buses about every 16 minutes.",
+  "since": "2026-09-25T17:15:00+05:30"
+ }
+]

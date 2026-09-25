@@ -1,0 +1,40 @@
+{
+ "t": "2026-09-25T17:15:00+05:30",
+ "ran": true,
+ "recommendations": [
+  {
+   "id": "rec_0001",
+   "created_at": "2026-09-25T17:15:00+05:30",
+   "action": "move_bus",
+   "from_route_id": "423",
+   "to_route_id": "534",
+   "bus_count": 1,
+   "window_start": "2026-09-25T17:30:00+05:30",
+   "window_end": "2026-09-25T19:00:00+05:30",
+   "trigger_flags": [
+    "overcrowded",
+    "underused",
+    "bunching"
+   ],
+   "expected_effect": {
+    "to_route": {
+     "wait_min_before": 5.6,
+     "wait_min_after": 5.2,
+     "peak_load_before": 1.13,
+     "peak_load_after": 1.06
+    },
+    "from_route": {
+     "wait_min_before": 7.2,
+     "wait_min_after": 8.2,
+     "peak_load_before": 0.31,
+     "peak_load_after": 0.36
+    }
+   },
+   "deadhead_km": 2.9,
+   "confidence": "high",
+   "explanation": "Move 1 bus from Route 423 to Route 534, 17:30–19:00. Route 534 is forecast at 113% of capacity near Lajpat Nagar (P90); Route 423 is at 31%. Expected effect: average wait on 534 falls from 5.6 to 5.2 minutes and peak load from 113% to 106%; 423 keeps its 20-minute minimum frequency (wait 7.2 to 8.2 minutes). Extra empty travel: 2.9 km. Confidence: high.",
+   "status": "pending",
+   "solver": "cp_sat"
+  }
+ ]
+}

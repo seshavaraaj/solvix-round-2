@@ -1,0 +1,20 @@
+[
+ {
+  "depot_id": "depot_kalkaji",
+  "name": "Kalkaji Depot",
+  "lat": 28.542,
+  "lon": 77.256,
+  "fleet_size": 16,
+  "reserve": 2,
+  "out_of_service": 0
+ },
+ {
+  "depot_id": "depot_okhla",
+  "name": "Okhla Depot",
+  "lat": 28.53,
+  "lon": 77.27,
+  "fleet_size": 30,
+  "reserve": 4,
+  "out_of_service": 1
+ }
+]

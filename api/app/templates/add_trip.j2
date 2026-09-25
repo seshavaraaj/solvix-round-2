@@ -1,0 +1,5 @@
+{% set to = r.expected_effect.to_route %}
+Add {{ r.bus_count }} reserve bus{{ "es" if r.bus_count != 1 else "" }} from {{ c.depot_name }} to Route {{ r.to_route_id }}, {{ start }}–{{ end }}.
+Route {{ r.to_route_id }} is forecast at {{ to.peak_load_before | pct }} of capacity{% if c.to_stop %} near {{ c.to_stop }}{% endif %} (P90) and no nearby route has a spare bus.
+Expected effect: average wait falls from {{ to.wait_min_before | num }} to {{ to.wait_min_after | num }} minutes and peak load from {{ to.peak_load_before | pct }} to {{ to.peak_load_after | pct }}.
+Extra empty travel: {{ r.deadhead_km | num }} km. Confidence: {{ r.confidence }}.

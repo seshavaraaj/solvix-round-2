@@ -1,0 +1,85 @@
+# Demo route cluster (solution2 §13 Q1): 5 South/East Delhi routes that share
+# the Ashram – Nehru Place – Okhla corridor and 2 depots.
+#
+# This file is the stand-in for the Delhi OTD static GTFS until the real feed
+# is downloaded. Stop coordinates are approximate (WGS84). Route numbers and
+# names follow the contract examples. When the real GTFS zip is available,
+# run gtfs_subset.py instead of build_network.py; both write the same Parquet
+# schema to data/artefacts/gtfs/.
+
+timezone: Asia/Kolkata
+capacity_rated: 60      # passengers at load factor 1.0
+capacity_crush: 90      # hard limit; above this passengers are left behind
+layover_min: 6          # terminal layover per trip end
+deadhead_speed_kmh: 20
+
+depots:
+  - {id: depot_okhla,   name: Okhla Depot,   lat: 28.5300, lon: 77.2700, fleet_size: 30, reserve: 4, out_of_service: 1}
+  - {id: depot_kalkaji, name: Kalkaji Depot, lat: 28.5420, lon: 77.2560, fleet_size: 16, reserve: 2, out_of_service: 0}
+
+# type drives the base boarding / alighting weight (see demand_params.yaml)
+stops:
+  - {id: stop_1001, name: Anand Vihar ISBT,        lat: 28.6468, lon: 77.3159, type: hub}
+  - {id: stop_1002, name: Mayur Vihar Phase 1,     lat: 28.6040, lon: 77.2944, type: residential}
+  - {id: stop_1003, name: Akshardham,              lat: 28.6127, lon: 77.2773, type: commercial}
+  - {id: stop_1004, name: Nizamuddin,              lat: 28.5893, lon: 77.2507, type: hub}
+  - {id: stop_1005, name: Ashram,                  lat: 28.5720, lon: 77.2585, type: commercial}
+  - {id: stop_1006, name: Lajpat Nagar,            lat: 28.5677, lon: 77.2433, type: commercial}
+  - {id: stop_1007, name: Moolchand,               lat: 28.5645, lon: 77.2347, type: minor}
+  - {id: stop_1008, name: Greater Kailash,         lat: 28.5480, lon: 77.2380, type: residential}
+  - {id: stop_1021, name: Nehru Place,             lat: 28.5494, lon: 77.2517, type: hub}
+  - {id: stop_1010, name: Kalkaji Mandir,          lat: 28.5500, lon: 77.2588, type: minor}
+  - {id: stop_1011, name: Govindpuri,              lat: 28.5390, lon: 77.2640, type: residential}
+  - {id: stop_1012, name: Okhla Industrial Area,   lat: 28.5300, lon: 77.2710, type: commercial}
+  - {id: stop_1013, name: Jasola,                  lat: 28.5380, lon: 77.2830, type: commercial}
+  - {id: stop_1014, name: Sarita Vihar,            lat: 28.5310, lon: 77.2890, type: residential}
+  - {id: stop_1015, name: Badarpur Border,         lat: 28.4950, lon: 77.3030, type: hub}
+  - {id: stop_1016, name: Tughlakabad,             lat: 28.5025, lon: 77.2730, type: residential}
+  - {id: stop_1017, name: AIIMS,                   lat: 28.5672, lon: 77.2100, type: hub}
+  - {id: stop_1018, name: Defence Colony,          lat: 28.5740, lon: 77.2320, type: residential}
+  - {id: stop_1019, name: Chirag Delhi,            lat: 28.5380, lon: 77.2270, type: minor}
+  - {id: stop_1020, name: Saket,                   lat: 28.5245, lon: 77.2066, type: commercial}
+  - {id: stop_1022, name: Kalindi Kunj,            lat: 28.5440, lon: 77.3100, type: residential}
+
+# busy_factor scales the calibrated daily total (1.0 = network average).
+routes:
+  - id: "534"
+    name: "534 Anand Vihar ISBT – Nehru Place"
+    depot_id: depot_okhla
+    color: "#E4572E"
+    planned_headway_min: 12
+    min_headway_min: 15
+    busy_factor: 1.1
+    stops: [stop_1001, stop_1002, stop_1003, stop_1004, stop_1005, stop_1006, stop_1007, stop_1008, stop_1021]
+  - id: "423"
+    name: "423 Lajpat Nagar – Badarpur Border"
+    depot_id: depot_okhla
+    color: "#17BEBB"
+    planned_headway_min: 15
+    min_headway_min: 20
+    busy_factor: 0.45
+    stops: [stop_1006, stop_1005, stop_1010, stop_1011, stop_1012, stop_1013, stop_1014, stop_1015]
+  - id: "511"
+    name: "511 AIIMS – Saket"
+    depot_id: depot_kalkaji
+    color: "#FFC914"
+    planned_headway_min: 12
+    min_headway_min: 15
+    busy_factor: 1.0
+    stops: [stop_1017, stop_1018, stop_1007, stop_1008, stop_1019, stop_1020]
+  - id: "604"
+    name: "604 Nehru Place – Badarpur Border"
+    depot_id: depot_kalkaji
+    color: "#76B041"
+    planned_headway_min: 15
+    min_headway_min: 20
+    busy_factor: 0.9
+    stops: [stop_1021, stop_1010, stop_1011, stop_1016, stop_1015]
+  - id: "717"
+    name: "717 Kalindi Kunj – Nehru Place"
+    depot_id: depot_okhla
+    color: "#8E6C8A"
+    planned_headway_min: 20
+    min_headway_min: 20
+    busy_factor: 0.4
+    stops: [stop_1022, stop_1013, stop_1014, stop_1012, stop_1011, stop_1010, stop_1021]

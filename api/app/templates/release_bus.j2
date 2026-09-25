@@ -1,0 +1,5 @@
+{% set fr = r.expected_effect.from_route %}
+Release {{ r.bus_count }} bus{{ "es" if r.bus_count != 1 else "" }} from Route {{ r.from_route_id }} to {{ c.depot_name }}, {{ start }}–{{ end }}.
+Route {{ r.from_route_id }} is forecast at only {{ fr.peak_load_before | pct }} of capacity (P90).
+Expected effect: average wait rises from {{ fr.wait_min_before | num }} to {{ fr.wait_min_after | num }} minutes, still within the {{ c.from_min_headway | num }}-minute minimum frequency; the bus returns to reserve.
+Extra empty travel: {{ r.deadhead_km | num }} km. Confidence: {{ r.confidence }}.

@@ -1,0 +1,766 @@
+{
+ "t": "2026-09-25T17:15:00+05:30",
+ "buses": [
+  {
+   "id": "bus_DL1PC1000",
+   "route_id": "423",
+   "direction": 1,
+   "lat": 28.56855,
+   "lon": 77.246305,
+   "bearing": 252.0,
+   "load_factor": 0.04,
+   "delay_min": 3.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1001",
+   "route_id": "423",
+   "direction": 0,
+   "lat": 28.563178,
+   "lon": 77.25862,
+   "bearing": 179.0,
+   "load_factor": 0.08,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1002",
+   "route_id": "423",
+   "direction": 0,
+   "lat": 28.532128,
+   "lon": 77.269345,
+   "bearing": 146.0,
+   "load_factor": 0.04,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1003",
+   "route_id": "423",
+   "direction": 0,
+   "lat": 28.531424,
+   "lon": 77.288637,
+   "bearing": 143.0,
+   "load_factor": 0.14,
+   "delay_min": 2.8,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1004",
+   "route_id": "423",
+   "direction": 0,
+   "lat": 28.497582,
+   "lon": 77.301996,
+   "bearing": 161.0,
+   "load_factor": 0.07,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1005",
+   "route_id": "423",
+   "direction": 1,
+   "lat": 28.519883,
+   "lon": 77.293323,
+   "bearing": 341.0,
+   "load_factor": 0.07,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1006",
+   "route_id": "423",
+   "direction": 1,
+   "lat": 28.536377,
+   "lon": 77.280566,
+   "bearing": 233.0,
+   "load_factor": 0.1,
+   "delay_min": 2.4,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1007",
+   "route_id": "423",
+   "direction": 1,
+   "lat": 28.557139,
+   "lon": 77.258703,
+   "bearing": 359.0,
+   "load_factor": 0.06,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1100",
+   "route_id": "511",
+   "direction": 1,
+   "lat": 28.537445,
+   "lon": 77.226162,
+   "bearing": 53.0,
+   "load_factor": 0.15,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1101",
+   "route_id": "511",
+   "direction": 1,
+   "lat": 28.568635,
+   "lon": 77.233525,
+   "bearing": 346.0,
+   "load_factor": 0.1,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1102",
+   "route_id": "511",
+   "direction": 1,
+   "lat": 28.56888,
+   "lon": 77.215434,
+   "bearing": 251.0,
+   "load_factor": 0.08,
+   "delay_min": 0.0,
+   "dark": true,
+   "last_seen": "2026-09-25T17:10:12+05:30"
+  },
+  {
+   "id": "bus_DL1PC1103",
+   "route_id": "511",
+   "direction": 0,
+   "lat": 28.568419,
+   "lon": 77.213945,
+   "bearing": 71.0,
+   "load_factor": 0.38,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1104",
+   "route_id": "511",
+   "direction": 0,
+   "lat": 28.563828,
+   "lon": 77.234834,
+   "bearing": 170.0,
+   "load_factor": 0.11,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1105",
+   "route_id": "511",
+   "direction": 0,
+   "lat": 28.546887,
+   "lon": 77.236775,
+   "bearing": 224.0,
+   "load_factor": 0.21,
+   "delay_min": 1.4,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1106",
+   "route_id": "511",
+   "direction": 0,
+   "lat": 28.531339,
+   "lon": 77.216934,
+   "bearing": 233.0,
+   "load_factor": 0.15,
+   "delay_min": 1.3,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1107",
+   "route_id": "511",
+   "direction": 1,
+   "lat": 28.526498,
+   "lon": 77.20962,
+   "bearing": 53.0,
+   "load_factor": 0.17,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1200",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.557669,
+   "lon": 77.236066,
+   "bearing": 170.0,
+   "load_factor": 0.35,
+   "delay_min": 9.5,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1201",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.549961,
+   "lon": 77.237608,
+   "bearing": 350.0,
+   "load_factor": 0.2,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1202",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.564768,
+   "lon": 77.235421,
+   "bearing": 67.0,
+   "load_factor": 0.22,
+   "delay_min": 3.7,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1203",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.586854,
+   "lon": 77.251803,
+   "bearing": 338.0,
+   "load_factor": 0.16,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1204",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.606236,
+   "lon": 77.269952,
+   "bearing": 45.0,
+   "load_factor": 0.17,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1205",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.606001,
+   "lon": 77.290467,
+   "bearing": 120.0,
+   "load_factor": 0.13,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1206",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.605138,
+   "lon": 77.294972,
+   "bearing": 24.0,
+   "load_factor": 0.27,
+   "delay_min": 7.9,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1207",
+   "route_id": "534",
+   "direction": 1,
+   "lat": 28.6468,
+   "lon": 77.3159,
+   "bearing": 24.0,
+   "load_factor": 0.0,
+   "delay_min": 0.4,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1208",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.63444,
+   "lon": 77.309691,
+   "bearing": 204.0,
+   "load_factor": 0.03,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1209",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.627544,
+   "lon": 77.306227,
+   "bearing": 204.0,
+   "load_factor": 0.28,
+   "delay_min": 6.5,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1210",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.612418,
+   "lon": 77.276979,
+   "bearing": 225.0,
+   "load_factor": 0.13,
+   "delay_min": 0.3,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1211",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.592804,
+   "lon": 77.254683,
+   "bearing": 225.0,
+   "load_factor": 0.15,
+   "delay_min": 0.9,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1212",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.573847,
+   "lon": 77.257667,
+   "bearing": 158.0,
+   "load_factor": 0.15,
+   "delay_min": 1.4,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1213",
+   "route_id": "534",
+   "direction": 0,
+   "lat": 28.562723,
+   "lon": 77.235055,
+   "bearing": 170.0,
+   "load_factor": 0.14,
+   "delay_min": 1.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1300",
+   "route_id": "604",
+   "direction": 1,
+   "lat": 28.508831,
+   "lon": 77.271439,
+   "bearing": 348.0,
+   "load_factor": 0.15,
+   "delay_min": 0.1,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1301",
+   "route_id": "604",
+   "direction": 1,
+   "lat": 28.539451,
+   "lon": 77.263787,
+   "bearing": 337.0,
+   "load_factor": 0.11,
+   "delay_min": 0.4,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1302",
+   "route_id": "604",
+   "direction": 1,
+   "lat": 28.5494,
+   "lon": 77.2517,
+   "bearing": 265.0,
+   "load_factor": 0.0,
+   "delay_min": 5.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1303",
+   "route_id": "604",
+   "direction": 0,
+   "lat": 28.520439,
+   "lon": 77.268577,
+   "bearing": 168.0,
+   "load_factor": 0.21,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1304",
+   "route_id": "604",
+   "direction": 0,
+   "lat": 28.5025,
+   "lon": 77.273,
+   "bearing": 106.0,
+   "load_factor": 0.19,
+   "delay_min": 4.1,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1305",
+   "route_id": "604",
+   "direction": 1,
+   "lat": 28.49518,
+   "lon": 77.30228,
+   "bearing": 286.0,
+   "load_factor": 0.27,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1400",
+   "route_id": "717",
+   "direction": 1,
+   "lat": 28.533892,
+   "lon": 77.286521,
+   "bearing": 323.0,
+   "load_factor": 0.03,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1401",
+   "route_id": "717",
+   "direction": 1,
+   "lat": 28.544,
+   "lon": 77.31,
+   "bearing": 76.0,
+   "load_factor": 0.0,
+   "delay_min": 2.8,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1402",
+   "route_id": "717",
+   "direction": 0,
+   "lat": 28.532146,
+   "lon": 77.288018,
+   "bearing": 143.0,
+   "load_factor": 0.1,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1403",
+   "route_id": "717",
+   "direction": 0,
+   "lat": 28.549422,
+   "lon": 77.259073,
+   "bearing": 337.0,
+   "load_factor": 0.03,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  },
+  {
+   "id": "bus_DL1PC1404",
+   "route_id": "717",
+   "direction": 1,
+   "lat": 28.545757,
+   "lon": 77.260806,
+   "bearing": 157.0,
+   "load_factor": 0.05,
+   "delay_min": 0.0,
+   "dark": false,
+   "last_seen": "2026-09-25T17:15:00+05:30"
+  }
+ ],
+ "route_health": [
+  {
+   "route_id": "534",
+   "direction": 0,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "Headway 2 min vs planned 11 min"
+    }
+   }
+  },
+  {
+   "route_id": "534",
+   "direction": 1,
+   "flags": {
+    "overcrowded": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "P90 load 1.13 at Lajpat Nagar, 17:30–18:30"
+    },
+    "underused": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "Headway 2 min vs planned 11 min"
+    }
+   }
+  },
+  {
+   "route_id": "423",
+   "direction": 0,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "P50 load at most 0.23 on every segment, 17:30–18:30"
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "423",
+   "direction": 1,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "P50 load at most 0.20 on every segment, 17:30–18:30"
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "511",
+   "direction": 0,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "511",
+   "direction": 1,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "underused": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "low",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "604",
+   "direction": 0,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "604",
+   "direction": 1,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "717",
+   "direction": 0,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "P50 load at most 0.14 on every segment, 17:30–18:30"
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  },
+  {
+   "route_id": "717",
+   "direction": 1,
+   "flags": {
+    "overcrowded": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    },
+    "underused": {
+     "on": true,
+     "confidence": "high",
+     "evidence": "P50 load at most 0.19 on every segment, 17:30–18:30"
+    },
+    "delay_emerging": {
+     "on": false,
+     "confidence": "medium",
+     "evidence": null
+    },
+    "bunching": {
+     "on": false,
+     "confidence": "high",
+     "evidence": null
+    }
+   }
+  }
+ ],
+ "feed": {
+  "buses_expected": 41,
+  "buses_reporting": 40,
+  "share_reporting": 0.976,
+  "mode": "replay",
+  "fresh": true
+ }
+}

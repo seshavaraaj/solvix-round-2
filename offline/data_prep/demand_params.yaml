@@ -1,0 +1,50 @@
+# Synthetic demand and travel-time generator parameters (solution2 §6.3).
+#
+# boardings per stop per minute =
+#     base_rate(route, stop type) x tod_profile(hour) x day_type x weather x event
+#
+# The base rate is calibrated so that a route's daily boardings equal
+#     pax_per_bus_day x planned buses on the route x route busy_factor
+# pax_per_bus_day is a calibration placeholder close to published DTC daily
+# ridership divided by fleet size. Replace it when a better figure is known.
+# Real ETM files in the same schema (see synthetic_etm.py) replace this model
+# without code changes.
+
+pax_per_bus_day: 600
+
+# relative boarding / alighting attraction by stop type
+stop_type_weight:
+  hub: 3.0
+  commercial: 2.0
+  residential: 1.5
+  minor: 0.7
+
+# share of daily boardings per hour of day (0..23); normalised in code
+tod_profile: [0.2, 0.1, 0.1, 0.1, 0.3, 1.0, 2.8, 5.5, 8.0, 7.2, 5.6, 4.8,
+              4.6, 4.5, 4.6, 5.0, 6.0, 7.6, 8.6, 7.8, 5.6, 3.6, 2.0, 0.8]
+
+# in the evening, flow toward residential stops is stronger (direction bias)
+evening_residential_bias: 1.25
+
+day_type:
+  weekday: 1.0
+  saturday: 0.85
+  sunday: 0.7
+  holiday: 0.65
+
+# demand multiplier by rain intensity (mm/h)
+weather:
+  rain_mm_breaks: [0.2, 2.0, 7.5]
+  demand_factor:  [1.0, 1.05, 1.12, 1.18]
+  speed_factor:   [1.0, 0.95, 0.85, 0.75]
+
+# planned-event boosts: (stop, start, end, factor). Scenario files add more.
+events: []
+
+travel_time:
+  # base running speed (km/h) by hour of day; peak hours slower
+  speed_kmh_by_hour: [28, 30, 30, 30, 28, 25, 22, 18, 16, 17, 19, 20,
+                      20, 20, 20, 19, 17, 15.5, 15, 16, 18, 21, 24, 26]
+  dwell_s_per_boarding: 2.5
+  dwell_s_min: 15
+  noise_cv: 0.12          # coefficient of variation of segment time

@@ -1,0 +1,4 @@
+# Offline lane (laptops only): data prep, training, batch simulation.
+-r ../api/requirements.txt
+gtfs-realtime-bindings==2.2.0   # 3.x needs protobuf 7, which conflicts with OR-Tools
+PyYAML==6.0.3
